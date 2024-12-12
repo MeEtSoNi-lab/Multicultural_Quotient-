@@ -1,13 +1,13 @@
-/* Base Styles */
-.home-main {
-    width: 100%;
-    font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
-  }
+
   
   .home-first-container {
     background-color: #000000;
     padding-top: 20px;
-  }
+
+    
+}
+
+
   
   .home-content {
     width: 50%;

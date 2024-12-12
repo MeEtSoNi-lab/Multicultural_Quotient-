@@ -1,5 +1,6 @@
 import React from 'react'
 import './home.css'
+
 function home() {
   return (
    <>
@@ -14,12 +15,16 @@ function home() {
         </div> */}
 
         <div className='home-first-container'>
-        <div className='home-content'>
-                <h1>What's Your Multicultural Quotient ?</h1>
-                <button>TAKE THE QUIZ</button>
+            <div className='home-first-container-overlay'>
+            <div className='home-content'>
+                    <h1>What's Your Multicultural Quotient ?</h1>
+                    <button>TAKE THE QUIZ</button>
 
+                </div>
             </div>
         </div>
+
+      
 
         <div className='home-second-container'>
             <h2>"We are living in a multicultural era."</h2>
