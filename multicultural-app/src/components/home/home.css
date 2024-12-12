@@ -48,7 +48,7 @@
   }
   
   .home-second-container h2 {
-    color: rgba(255, 0, 0, 0.986);
+    color: #e63946;
     font-size: 35px;
     margin-bottom: 20px;
   }
@@ -92,7 +92,7 @@
     width: 70%;
     margin: auto;
     font-size: 20px;
-    color: #c71522;
+    color: #e63946;
     text-decoration: underline;
   }
   .home-third-get-started-info{
