@@ -1,0 +1,49 @@
+/* Step indicator styling */
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+  
+  .step-indicator span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #aaa;
+  }
+  
+  .step-indicator span.active {
+    color: #e63946; /* Highlight the active step */
+  }
+  
+  /* Progress bar styling */
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    background-color: #e63946;
+    transition: width 0.3s ease;
+  }
+  
+  /* Navigation buttons */
+  .survey-navigation button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .survey-navigation button:hover {
+    background-color: #e63946;
+  }
+  
