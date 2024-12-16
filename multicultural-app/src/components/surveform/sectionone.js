@@ -46,7 +46,7 @@ function SectionOne() {
   return (
     <div className='section-form'>
       <div className='section-one-form'>
-            <h3>What is your birth year</h3>
+            <h3>What is your birth year ?</h3>
             <div className="select-wrapper">
             <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
             {bornData.length > 0 ? (
@@ -61,7 +61,25 @@ function SectionOne() {
             </select>
             </div>
 
-            <h3>What is your country</h3>
+            <h3>What is your country of birth ?</h3>
+
+            <div className="select-wrapper">
+            <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
+            {countryData.length > 0 ? (
+                countryData.map((item, index) => (
+                <option key={index} value={item._id}> {/* Assuming _id is unique */}
+                    {item.name} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
+            </select>
+            </div>
+
+
+
+            <h3>What is your current country of recidence ?</h3>
 
             <div className="select-wrapper">
             <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
