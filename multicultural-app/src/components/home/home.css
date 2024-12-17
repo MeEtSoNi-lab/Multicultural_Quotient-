@@ -104,51 +104,67 @@
 
 
   .survey-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
-.survey-popup-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  cursor: pointer;
-}
-
-.survey-popup-content {
-  position: relative;
-  background: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transform: translateY(100px);
-  opacity: 0;
-  animation: fadeUp 0.5s ease-in-out forwards;
-  text-align: center;
-}
-
-@keyframes fadeUp {
-  from {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto; /* Allow scrolling for overflow content */
+  }
+  
+  /* Overlay Style */
+  .survey-popup-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  /* Popup Content Style */
+  .survey-popup-content {
+    position: relative;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 50%;
+    max-height: 80%; /* Limit the height of the popup */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    overflow-y: auto; /* Enable scrolling for long content */
     transform: translateY(100px);
     opacity: 0;
+    animation: fadeUp 0.5s ease-in-out forwards;
   }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
+  
+  /* Close Button Style */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
-}
-
+  
+  /* Fade-Up Animation */
+  @keyframes fadeUp {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 .close-button {
   position: absolute;
   top: 0px;
