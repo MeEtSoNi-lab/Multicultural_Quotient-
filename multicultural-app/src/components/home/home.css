@@ -1,12 +1,25 @@
 
-  
-  .home-first-container {
-    background-color: #000000;
+
+.home-first-container{
     padding-top: 20px;
-
-    
+    position: relative;
+     
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url('C:\Users\meets\Desktop\Multicultural_Quotient-\multicultural-app\public\images\multicultural.jpg') center/cover no-repeat;
 }
-
+.home-first-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.596); /* Light visibility effect */
+    z-index: 1;
+}
 
   
   .home-content {
@@ -14,6 +27,8 @@
     margin: auto;
     margin-top: 100px;
     text-align: center;
+    position: relative;
+    z-index: 2;
   }
   
   .home-content h1 {
@@ -102,6 +117,34 @@
 
   }
 
+
+  .home-fourth-container{
+    width: 100%;
+    display: flex;
+    margin-bottom: 100px;
+  }
+  .home-fourth-container-photo{
+    width: 50%;
+    text-align: center;
+    padding: 30px;
+  }
+  .home-fourth-container-photo img{
+        width: 500px;
+        height: 300px;
+  }
+
+
+  .home-fourth-container-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .home-fourth-container-info h2{
+    color: #e63946;
+  }
 
   .survey-popup {
     position: fixed;
