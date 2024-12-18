@@ -8,7 +8,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: url('C:\Users\meets\Desktop\Multicultural_Quotient-\multicultural-app\public\images\multicultural.jpg') center/cover no-repeat;
+      background-image: url('/public/images/multicultural.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
 }
 .home-first-container::before{
     content: '';
