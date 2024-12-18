@@ -290,6 +290,31 @@
       .survey-popup-content{
         max-width: 100%;
       }
+
+
+      .home-fourth-container{
+        width: 100%;
+        display: block;
+        margin-bottom: 100px;
+      }
+      .home-fourth-container-photo{
+        width: 100%;
+        text-align: center;
+       
+      }
+      .home-fourth-container-photo img{
+            width: 500px;
+            height: 300px;
+      }
+    
+    
+      .home-fourth-container-info{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+      }
   }
   
   /* Media Query for Mobile Phones (max-width: 480px) */
