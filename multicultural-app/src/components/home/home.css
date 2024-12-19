@@ -316,6 +316,10 @@
         margin: auto;
       }
 
+      .home-fourth-container-info h2{
+        text-align: center;
+      }
+
   }
   
   /* Media Query for Mobile Phones (max-width: 480px) */
