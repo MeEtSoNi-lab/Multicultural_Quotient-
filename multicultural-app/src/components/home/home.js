@@ -26,7 +26,7 @@ function Home() {
       {
         data: [calculatedScore, 140 - calculatedScore],  // Data for the donut chart (calculated score and remaining score)
         backgroundColor: ['#e63946', '#e0e0e0'],  // Green for score, light grey for remaining
-        borderColor: ['#4caf50', '#e0e0e0'],
+        borderColor: ['#e63946', '#e0e0e0'],
         borderWidth: 1,
       },
     ],
