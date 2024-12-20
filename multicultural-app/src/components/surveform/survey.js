@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './survey.css';
 import Sectionone from './sectionone';
 import Sectiontwo from './sectiontwo';
 import Sectionthree from './sectionthree';
+import { multiStepContext } from '../../StepContext';
+import { useNavigate } from 'react-router-dom';
 
 function Survey() {
   const [currentStep, setCurrentStep] = useState(1); // Step starts at 1 (Section 1)
+  const { calculatedScore, setcalculatedScore, ShowSurvey, setShowSurvey } = useContext(multiStepContext);
+  const navigate = useNavigate();
 
   const nextStep = () => {
     if (currentStep < 3) {
@@ -21,6 +25,20 @@ function Survey() {
 
   // Progress bar calculation (percentage based on currentStep)
   const progressPercentage = (currentStep / 3) * 100;
+
+  const submitscore = () => {
+    setcalculatedScore(40);
+    setShowSurvey(false);
+    // Navigate to the home route and scroll to the score section
+    navigate('/');
+    // Scroll to the score section after navigation
+    setTimeout(() => {
+      const scoreSection = document.getElementById('score');
+      if (scoreSection) {
+        scoreSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // Slight delay to allow for page load
+  };
 
   return (
     <div className="survey-form-box">
@@ -53,7 +71,7 @@ function Survey() {
           <button onClick={nextStep}>Next</button> // Show "Next" button if not on the last step
         )}
         {currentStep === 3 && (
-          <button onClick={() => alert('Survey submitted!')}>Submit</button> // Show "Submit" on last step
+          <button onClick={() => submitscore()}>Calculate score</button> // Show "Submit" on last step
         )}
       </div>
     </div>

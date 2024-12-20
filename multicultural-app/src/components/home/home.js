@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './home.css';
 import Survey from '../surveform/survey';
+import { multiStepContext } from '../../StepContext';
+import { Doughnut } from 'react-chartjs-2';  // Import Doughnut chart from react-chartjs-2
+import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale } from 'chart.js';
+
+// Register chart.js components
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
 function Home() {
-  const [showSurvey, setShowSurvey] = useState(false);
+  const { calculatedScore, showSurvey, setShowSurvey } = useContext(multiStepContext);
 
   const handleQuizClick = () => {
     setShowSurvey(true);
@@ -13,15 +19,38 @@ function Home() {
     setShowSurvey(false);
   };
 
+  // Data for the Donut chart
+  const chartData = {
+    labels: ['Score', 'Remaining'],
+    datasets: [
+      {
+        data: [calculatedScore, 140 - calculatedScore],  // Data for the donut chart (calculated score and remaining score)
+        backgroundColor: ['#e63946', '#e0e0e0'],  // Green for score, light grey for remaining
+        borderColor: ['#4caf50', '#e0e0e0'],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+  };
+
   return (
     <>
       <div className='home-first-container'>
-      
-          <div className='home-content'>
-            <h1>What's Your Multicultural Quotient ?</h1>
-            <button onClick={handleQuizClick}>TAKE THE QUIZ</button>
-          </div>
-        
+        <div className='home-content'>
+          <h1>What's Your Multicultural Quotient ?</h1>
+          <button onClick={handleQuizClick}>TAKE THE QUIZ</button>
+        </div>
       </div>
 
       <div className='home-second-container'>
@@ -49,15 +78,16 @@ function Home() {
         </div>
       </div>
 
-        <div className='home-fourth-container'>
-            <div className='home-fourth-container-photo'>
-                <img src="/images/Joycelyn.jpg" alt="" />
-            </div>
-            <div className='home-fourth-container-info'>
-                <h2>Joycelyn David</h2>
-                <p>Working with a creative team and brands that have a positive impact on the lives of Canadians are the best parts of Joycelyn’s role as AVC’s Owner and CEO. A daughter of immigrant parents from the Philippines, Joycelyn understands the hopes and struggles of newcomers and is proud to engage with and help bring multicultural communities together. She thrives on working with clients, exploring ways for them to grow their businesses, expand their reach, and surpass their goals. With a marketing background that spans almost 20 years at global organizations like Western Union and KPMG, Joycelyn’s the ultimate big-picture thinker who brings a uniquely positive, anything’s-possible approach to every new strategic ask. She combines this with a wealth of marketing knowledge and a firm grounding in financials, making her a true force to be reckoned with. She’s also a huge Star Wars fan (we’re talking e-v-e-r-y episode). Adventurer (ask her about her white water rafting or pole jumping exploits). Musician (she can teach you how to play piano). Lover of family gatherings (near and far). Fan of simple foods (plain rice and a fried egg, anyone?). And collector of throw pillows (we’ve got nothing for this one).</p>
-            </div>
+      <div className='home-fourth-container'>
+        <div className='home-fourth-container-photo'>
+          <img src="/images/Joycelyn.jpg" alt="" />
         </div>
+        <div className='home-fourth-container-info'>
+          <h2>Joycelyn David</h2>
+          <p>Working with a creative team and brands that have a positive impact...</p>
+        </div>
+      </div>
+
       {showSurvey && (
         <div className='survey-popup'>
           <div className='survey-popup-overlay' onClick={handleCloseSurvey}></div>
@@ -66,6 +96,17 @@ function Home() {
               ✖
             </button>
             <Survey />
+          </div>
+        </div>
+      )}
+
+      {calculatedScore && (
+        <div id='score' className='home-score-container'>
+          <div className='donut-chart-container'>
+            <Doughnut data={chartData} options={chartOptions} />
+            <div className='score-text'>
+              <h1>{calculatedScore} / 140</h1>
+            </div>
           </div>
         </div>
       )}
