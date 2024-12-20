@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import API_BASE_URL from '../../apiconfig';
 import './sectionone.css'
+import { multiStepContext } from '../../StepContext';
 function SectionOne() {
-  const [bornData, setBornData] = useState([]);
-  const [countryData, setCountryData] = useState([]);
-  const [selectedValue, setSelectedValue] = useState('');
+ const { bornData, setBornData,handlebornData,selectedbornData,selectedbornDataValue,selectedbornDataScore,
+         countryData, setcountryData,handlecountryData,selectedcountryData,
+         countryResidence,setcountryResidence,handlecountryResidence, selectedcountryResidence} =useContext(multiStepContext);
+ const [selectedValue, setSelectedValue] = useState('');
+
 
   useEffect(() => {
     const fetchBornData = async () => {
@@ -28,7 +31,7 @@ function SectionOne() {
             throw new Error('Failed to fetch data');
           }
           const data = await response.json();
-          setCountryData(data);
+          setcountryData(data);
           console.log(data);
         } catch (error) {
           console.log(error);
@@ -48,10 +51,13 @@ function SectionOne() {
       <div className='section-one-form'>
             <h3>What is your birth year ?</h3>
             <div className="select-wrapper">
-            <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
+            <select className='styled-select' value={selectedbornData[0]} onChange={handlebornData}>
+                <option value="" disabled selected>
+                  Select
+              </option>
             {bornData.length > 0 ? (
                 bornData.map((item, index) => (
-                <option key={index} value={item._id}> {/* Assuming _id is unique */}
+                <option key={index} value={`${item.generation}|${item.score}`}> {/* Assuming _id is unique */}
                     {item.generation} {/* Assuming 'generation' is the label to display */}
                 </option>
                 ))
@@ -64,10 +70,13 @@ function SectionOne() {
             <h3>What is your country of birth ?</h3>
 
             <div className="select-wrapper">
-            <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
+            <select className='styled-select' value={selectedcountryData} onChange={handlecountryData}>
+            <option value="" disabled selected>
+               Select
+           </option>
             {countryData.length > 0 ? (
                 countryData.map((item, index) => (
-                <option key={index} value={item._id}> {/* Assuming _id is unique */}
+                <option key={index} value={item.name}> {/* Assuming _id is unique */}
                     {item.name} {/* Assuming 'generation' is the label to display */}
                 </option>
                 ))
@@ -82,10 +91,13 @@ function SectionOne() {
             <h3>What is your current country of recidence ?</h3>
 
             <div className="select-wrapper">
-            <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
+            <select className='styled-select' value={selectedcountryResidence} onChange={handlecountryResidence}>
+            <option value="" disabled selected>
+               Select
+           </option>
             {countryData.length > 0 ? (
                 countryData.map((item, index) => (
-                <option key={index} value={item._id}> {/* Assuming _id is unique */}
+                <option key={index} value={item.name}> {/* Assuming _id is unique */}
                     {item.name} {/* Assuming 'generation' is the label to display */}
                 </option>
                 ))
