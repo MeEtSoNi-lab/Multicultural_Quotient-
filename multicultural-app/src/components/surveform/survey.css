@@ -1,3 +1,9 @@
+
+
+.survey-form-box h3{
+  color: #e63946;
+}
+
 /* Step indicator styling */
 .step-indicator {
     display: flex;
@@ -31,7 +37,11 @@
     background-color: #e63946;
     transition: width 0.3s ease;
   }
-  
+  .survey-navigation{
+    width: 100%;
+    text-align: center;
+
+  }
   /* Navigation buttons */
   .survey-navigation button {
     margin: 10px;
@@ -40,7 +50,7 @@
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+   
   }
   
   .survey-navigation button:hover {
