@@ -43,13 +43,16 @@ function StepContext() {
     const [selectedcontentengagement,setselectedcontentengagement]=useState([]);
 
     // states to store the score 
-    cosnt[selectedyearsofrecidenceScore,setselectedyearsofrecidenceScore] = useState([]);
+    const[selectedyearsofrecidenceScore,setselectedyearsofrecidenceScore] = useState([]);
     const[selectednumbercountriesScore,setselectednumbercountriesScore]=useState([]);
-    cosnt[selectedtraveledcountriesScore,setselectedtraveledcountriesScore]=useState([]);
+    const[selectedtraveledcountriesScore,setselectedtraveledcountriesScore]=useState([]);
     const[selectedlanguageconverseScore,setselectedlanguageconverseScore]=useState([]);
-    cosnt[selectedculturalfoodScore,setselectedculturalfoodScore]=useState([]);
+    const[selectedculturalfoodScore,setselectedculturalfoodScore]=useState([]);
     const[selectedcontentengagementScore,setselectedcontentengagementScore]=useState([]);
-    //methode to set current score
+    
+
+
+  //methode to set current score
 
     const updatecurrentScore=(newscore)=>{
       setcurrentScore((prevscore)=>prevscore+parseInt(newscore));

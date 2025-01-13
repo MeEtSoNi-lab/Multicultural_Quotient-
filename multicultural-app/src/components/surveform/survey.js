@@ -75,7 +75,7 @@ function Survey() {
         )}
       </div>
 
-     
+      <h1>Your current score is : {currentScore}</h1>
     </div>
   );
 }
