@@ -37,6 +37,8 @@ function Home() {
     },
   };
 
+  
+ 
   return (
     <>
       <div className='home-first-container'>
@@ -86,7 +88,7 @@ function Home() {
             <Survey />
         </div>
       
-
+        
       {calculatedScore && (
         <div id='score' className='home-score-container'>
           <div className='donut-chart-container'>
