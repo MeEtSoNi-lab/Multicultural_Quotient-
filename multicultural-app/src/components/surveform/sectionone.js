@@ -93,7 +93,7 @@ function SectionOne() {
 
 {/* country of recidence question */}
 
-            <h3>What is your current country of recidence ?</h3>
+            <h3>What is your current country of residence ?</h3>
 
             <div className="select-wrapper">
             <select className='styled-select'  onChange={handlecountryResidence}>

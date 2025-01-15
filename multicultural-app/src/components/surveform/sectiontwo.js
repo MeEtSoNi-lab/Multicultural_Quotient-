@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import API_BASE_URL from '../../apiconfig';
 import "./sectiontwo.css"
+import { multiStepContext } from '../../StepContext';
 
 function Sectiontwo() {
-    const [yearsofrecidence,setyearsofrecidence]=useState([]);
-    const [numbercountries,setnumbercountries]=useState([]);
-    const [traveledcountries,settraveledcountries]=useState([]);
-    const [languageconverse,setlanguageconverse]=useState([]);
-    const [culturalfood,setculturalfood]=useState([]);
-    const [contentengagement,setcontentengagement]=useState([]);
+    const {yearsofrecidence,setyearsofrecidence,selectedyearsofrecidence,handleyearsofrecidence,
+        numbercountries,setnumbercountries,selectednumbercountries,handlenumbercountries,
+        traveledcountries,settraveledcountries,selectedtraveledcountries,handletraveledcountries,
+        languageconverse,setlanguageconverse,selectedlanguageconverse,handlelanguageconverse,
+        culturalfood,setculturalfood,selectedculturalfood,handleculturalfood,
+        contentengagement,setcontentengagement,selectedcontentengagement,handlecontentengagement
+        }=useContext(multiStepContext);
+
   const [selectedValue, setSelectedValue] = useState('');
     
   const handleSelectChange = (e) => {
@@ -112,67 +115,79 @@ function Sectiontwo() {
   return (
     <div className='section-form'>
     <div className='section-two-form'>
-          <h3>What is your birth year ?</h3>
+          <h3>How many years have you lived in your country of residence? ?</h3>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {yearsofrecidence.length > 0 ? (
-              yearsofrecidence.map((item, index) => (
-              <option key={index} value={item._id}> {/* Assuming _id is unique */}
-                  {item.years} {/* Assuming 'generation' is the label to display */}
+          <select className='styled-select'   onChange={handleyearsofrecidence}>
+                <option value="" disabled selected>
+                  {selectedyearsofrecidence ? selectedyearsofrecidence : 'Select'}
               </option>
-              ))
-          ) : (
-              <option>No data available</option>
-          )}
-          </select>
+            {yearsofrecidence.length > 0 ? (
+                yearsofrecidence.map((item, index) => (
+                <option key={index} value={`${item.years}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.years} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
+            </select>
           </div>
 
 
 
           <h3>How many countries have you lived in?</h3>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {numbercountries.length > 0 ? (
-              numbercountries.map((item, index) => (
-              <option key={index} value={item._id}> {/* Assuming _id is unique */}
-                  {item.numbercountries} {/* Assuming 'generation' is the label to display */}
-              </option>
-              ))
-          ) : (
-              <option>No data available</option>
-          )}
+          <select className='styled-select'  onChange={handlenumbercountries}>
+            <option value="" disabled selected>
+                {selectednumbercountries ? selectednumbercountries : "Select"}
+            </option>
+            {numbercountries.length > 0 ? (
+                numbercountries.map((item, index) => (
+                <option key={index} value={`${item.numbercountries}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.numbercountries} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
           </select>
           </div>
 
 
           <h3>Approximately many countries have you traveled to (for work or personal)?</h3>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {traveledcountries.length > 0 ? (
-              traveledcountries.map((item, index) => (
-              <option key={index} value={item.score}> {/* Assuming _id is unique */}
-                  {item.traveledcountries} {/* Assuming 'generation' is the label to display */}
-              </option>
-              ))
-          ) : (
-              <option>No data available</option>
-          )}
+          <select className='styled-select'  onChange={handletraveledcountries}>
+            <option value="">
+                {selectedtraveledcountries ? selectedtraveledcountries : "Select"}
+            </option>
+            {traveledcountries.length > 0 ? (
+                traveledcountries.map((item, index) => (
+                <option key={index} value={`${item.traveledcountries}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.traveledcountries} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
           </select>
           </div>
 
 
           <h3>How many languages can you read, speak or converse in?</h3>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {languageconverse.length > 0 ? (
-              languageconverse.map((item, index) => (
-              <option key={index} value={item.score}> {/* Assuming _id is unique */}
-                  {item.languagecnverse} {/* Assuming 'generation' is the label to display */}
-              </option>
-              ))
-          ) : (
-              <option>No data available</option>
-          )}
+          <select className='styled-select'  onChange={handlelanguageconverse}>
+            <option value="">
+                {selectedlanguageconverse ? selectedlanguageconverse : "Select"}
+            </option>
+            {languageconverse.length > 0 ? (
+                languageconverse.map((item, index) => (
+                <option key={index} value={`${item.languageconverse}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.languageconverse} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
           </select>
           </div>
 
@@ -180,26 +195,32 @@ function Sectiontwo() {
 
           <h3> Food is a great way to celebrate and learn about cultures not your own.  How often do you cook or eat food from another culture than your own?</h3>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {culturalfood.length > 0 ? (
-              culturalfood.map((item, index) => (
-              <option key={index} value={item.score}> {/* Assuming _id is unique */}
-                  {item.culturalfood} {/* Assuming 'generation' is the label to display */}
-              </option>
-              ))
-          ) : (
-              <option>No data available</option>
-          )}
+          <select className='styled-select'  onChange={handleculturalfood}>
+            <option value="">
+                {selectedculturalfood ? selectedculturalfood : "Select"}
+            </option>
+            {culturalfood.length > 0 ? (
+                culturalfood.map((item, index) => (
+                <option key={index} value={`${item.culturalfood}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.culturalfood} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
           </select>
           </div>
 
 
           <h3> Do engage with content (such as music, movies, television shows, social media content) that are created from outside your own country of residence or birth?</h3>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
+          <select className='styled-select'  onChange={handlecontentengagement}>
+          <option value="">
+            {selectedcontentengagement ? selectedcontentengagement : "Select"}
+          </option>
           {contentengagement.length > 0 ? (
               contentengagement.map((item, index) => (
-              <option key={index} value={item.score}> {/* Assuming _id is unique */}
+              <option key={index} value={`${item.contentengagement}|${item.score}`}> {/* Assuming _id is unique */}
                   {item.contentengagement} {/* Assuming 'generation' is the label to display */}
               </option>
               ))

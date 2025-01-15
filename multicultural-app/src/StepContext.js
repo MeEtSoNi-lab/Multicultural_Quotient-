@@ -18,7 +18,7 @@ function StepContext() {
   const [selectedbornDataScore,setselectedbornDataScore]=useState('');
 
   const [selectedcountryDataValue,setselectedcountryDataValue]=useState('');
-  const [selectedcountryDataScore,setselectedcountryDataScore]=useState('');
+  const [selectedcountryDataScore,setselectedcountryDataScore]=useState(0);
 
   const [selectedcountryResidenceValue,setselectedcountryResidenceValue ] =useState('');
   const [selectedcountryResidenceScore,setselectedcountryResidenceScore ] =useState('');
@@ -35,21 +35,21 @@ function StepContext() {
     const [contentengagement,setcontentengagement]=useState([]);
 
     // display and selected data from dropdown
-    const [selectedyearsofrecidence,setselectedyearsofrecidence]=useState([]);
-    const [selectednumbercountries,setselectednumbercountries]=useState([]);
-    const [selectedtraveledcountries,setselectedtraveledcountries]=useState([]);
-    const [selectedlanguageconverse,setselectedlanguageconverse]=useState([]);
-    const [selectedculturalfood,setselectedculturalfood]=useState([]);
-    const [selectedcontentengagement,setselectedcontentengagement]=useState([]);
+    const [selectedyearsofrecidence,setselectedyearsofrecidence]=useState('');
+    const [selectednumbercountries,setselectednumbercountries]=useState('');
+    const [selectedtraveledcountries,setselectedtraveledcountries]=useState('');
+    const [selectedlanguageconverse,setselectedlanguageconverse]=useState('');
+    const [selectedculturalfood,setselectedculturalfood]=useState('');
+    const [selectedcontentengagement,setselectedcontentengagement]=useState('');
 
     // states to store the score 
-    const[selectedyearsofrecidenceScore,setselectedyearsofrecidenceScore] = useState([]);
-    const[selectednumbercountriesScore,setselectednumbercountriesScore]=useState([]);
-    const[selectedtraveledcountriesScore,setselectedtraveledcountriesScore]=useState([]);
-    const[selectedlanguageconverseScore,setselectedlanguageconverseScore]=useState([]);
-    const[selectedculturalfoodScore,setselectedculturalfoodScore]=useState([]);
-    const[selectedcontentengagementScore,setselectedcontentengagementScore]=useState([]);
-    
+    const[selectedyearsofrecidenceScore,setselectedyearsofrecidenceScore] = useState('');
+    const[selectednumbercountriesScore,setselectednumbercountriesScore]=useState('');
+    const[selectedtraveledcountriesScore,setselectedtraveledcountriesScore]=useState('');
+    const[selectedlanguageconverseScore,setselectedlanguageconverseScore]=useState('');
+    const[selectedculturalfoodScore,setselectedculturalfoodScore]=useState('');
+    const[selectedcontentengagementScore,setselectedcontentengagementScore]=useState('');
+    const [previousCountryScore, setPreviousCountryScore] = useState(0);
 
 
   //methode to set current score
@@ -85,6 +85,7 @@ function StepContext() {
       const AllRest=5;
 
       const countryScore= Individualism + Indulgence + PowerDistance + UncertaintyAvoidance + AllRest;
+  
       setselectedcountryDataScore(countryScore);
       setselectedcountryDataValue(name);
       updatecurrentScore(countryScore);
@@ -120,27 +121,55 @@ function StepContext() {
   //methodes to set the values for second section form
 
   const handleyearsofrecidence=(e)=>{
-    setselectedyearsofrecidence(e.target.value);
+    console.log(e.target.value.split("|"))
+    const [years, score] = e.target.value.split("|");
+    setselectedyearsofrecidence(years);
+    setselectedyearsofrecidenceScore(score);
+    console.log("selected years is :" , years)
+    console.log("Accsiated score is  is :" , score)
+
   }
 
   const handlenumbercountries=(e)=>{
-      setselectednumbercountries(e.target.value);
+    const [numbercountries,score]=e.target.value.split("|");
+    setselectednumbercountries(numbercountries);
+    setselectednumbercountriesScore(score)
+    console.log("Selected number of countries :" , numbercountries);
+    console.log("Selected numbercountriesscore is :" , score);
+
   }
 
   const handletraveledcountries=(e)=>{
-      setselectedtraveledcountries(e.target.value);
+    const [traveledcountries, score]=e.target.value.split("|");
+      setselectedtraveledcountries(traveledcountries);
+      setselectedtraveledcountriesScore(score)
+      console.log("Selected travelled country is :" , traveledcountries)
+      console.log("Associated score with traveledcountries is:" , score)
+
   }
 
   const handlelanguageconverse=(e)=>{
-    setselectedlanguageconverse(e.target.value);
+    const[languageconverse,score]=e.target.value.split('|');
+    setselectedlanguageconverse(languageconverse);
+    setselectedlanguageconverseScore(score);  
+    console.log("Selected language converse is:" , languageconverse);
+    console.log("Associated score with language converse is :" , score);
   }
 
   const handleculturalfood =(e)=>{
-    setselectedculturalfood(e.target.value);
+    const[culturalfood,score]=e.target.value.split('|');
+    setselectedculturalfood(culturalfood);
+    setselectedculturalfoodScore(score);
+    console.log('Selected cultural food is :' , culturalfood);
+    console.log("Associated score with language converse is :",score)
   }
 
   const handlecontentengagement =(e)=>{
-    setselectedcontentengagement(e.target.value);
+    const[contentengagement,score]=e.target.value.split('|');
+    setselectedcontentengagement(contentengagement);
+    setselectedcontentengagementScore(score);
+    console.log("Selected contentengagement is :",contentengagement)
+    console.log("Associated contentengagement score is :", score)
   }
 
 
@@ -155,7 +184,7 @@ function StepContext() {
           countryData, setcountryData,handlecountryData,selectedcountryData,selectedcountryDataValue,selectedcountryDataScore,
           countryResidence,setcountryResidence,handlecountryResidence,selectedcountryResidence,selectedcountryResidenceValue,selectedcountryResidenceScore,
           // states of second section
-          yearsofrecidence,setyearsofrecidence,selectedyearsofrecidence,setselectedyearsofrecidence,handlebornData,
+          yearsofrecidence,setyearsofrecidence,selectedyearsofrecidence,setselectedyearsofrecidence,handleyearsofrecidence,
           numbercountries,setnumbercountries,selectednumbercountries,setselectednumbercountries,handlenumbercountries,
           traveledcountries,settraveledcountries,selectedtraveledcountries,setselectedtraveledcountries,handletraveledcountries,
           languageconverse,setlanguageconverse,selectedlanguageconverse,setselectedlanguageconverse,handlelanguageconverse,
