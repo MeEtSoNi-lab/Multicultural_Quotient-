@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Survey() {
   const [currentStep, setCurrentStep] = useState(1); // Step starts at 1 (Section 1)
-  const { currentScore,calculatedScore, setcalculatedScore, ShowSurvey, setShowSurvey } = useContext(multiStepContext);
+  const { currentScore,calculatedScore, setcalculatedScore, ShowSurvey, setShowSurvey,calculationofScore } = useContext(multiStepContext);
   const navigate = useNavigate();
 
   const nextStep = () => {
@@ -71,7 +71,7 @@ function Survey() {
           <button onClick={nextStep}>Next</button> // Show "Next" button if not on the last step
         )}
         {currentStep === 3 && (
-          <button onClick={() => submitscore()}>Calculate score</button> // Show "Submit" on last step
+          <button onClick={() =>calculationofScore()}>Calculate score</button> // Show "Submit" on last step
         )}
       </div>
 

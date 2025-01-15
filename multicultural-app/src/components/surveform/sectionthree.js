@@ -1,13 +1,15 @@
 import React from 'react' 
-import { useEffect,useState } from 'react';
+import { useEffect,useState,useContext } from 'react';
 import API_BASE_URL from '../../apiconfig';
+import { multiStepContext } from '../../StepContext';
 
 function Sectionthree() {
-  const [multiculturalismbenefits, setmulticulturalismbenefits] = useState([]);
-  const [disagreestatements,setdisagreestatements]=useState([]);
-  const [negativestatementscale,setnegativestatementscale]=useState([]);
-  const [interactionculturalgroups,setinteractionculturalgroups]=useState([]);
-  const [selectedValue, setSelectedValue] = useState('');
+  const{multiculturalismbenefits, setmulticulturalismbenefits,selectedmulticulturalismbenefits,handlemulticulturalismbenefits,
+    disagreestatements,setdisagreestatements,selecteddisagreestatements,handledisagreestatements,
+    negativestatementscale,setnegativestatementscale,selectednegativestatementscale,handlenegativestatementscale,
+    interactionculturalgroups,setinteractionculturalgroups,selectedinteractionculturalgroups,handleinteractionculturalgroups
+  }=useContext(multiStepContext);
+ 
   
 
   useEffect(() => {
@@ -75,10 +77,7 @@ function Sectionthree() {
    
   }, []);
 
-  const handleSelectChange = (e) => {
-    setSelectedValue(e.target.value);
-  };
-
+ 
   return (
     <div className='section-form'>
     <div className='section-one-form'>
@@ -86,15 +85,18 @@ function Sectionthree() {
                 To what extent do you believe that multiculturalism benefits… 
           </h3>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {multiculturalismbenefits.length > 0 ? (
-              multiculturalismbenefits.map((item, index) => (
-              <option key={index} value={item._id}> {/* Assuming _id is unique */}
-                  {item.multiculturalismbenefits} {/* Assuming 'generation' is the label to display */}
+          <select className='styled-select'  onChange={handlemulticulturalismbenefits}>
+              <option value='' disabled selected>
+                  {selectedmulticulturalismbenefits ? selectedmulticulturalismbenefits : "Select"}
               </option>
-              ))
-          ) : (
-              <option>No data available</option>
+            {multiculturalismbenefits.length > 0 ? (
+                multiculturalismbenefits.map((item, index) => (
+                <option key={index} value={`${item.multiculturalismbenefits}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.multiculturalismbenefits} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
           )}
           </select>
           </div>
@@ -107,32 +109,40 @@ function Sectionthree() {
           <p>I have experienced the traditions and/or attended multicultural festivals and events where I live </p>
           <p>I feel comfortable expressing my cultural identity while also feeling I am a part of society</p>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {disagreestatements.length > 0 ? (
-              disagreestatements.map((item, index) => (
-              <option key={index} value={item.score}> {/* Assuming _id is unique */}
-                  {item.disagreestatements} {/* Assuming 'generation' is the label to display */}
+          <select className='styled-select'  onChange={handledisagreestatements}>
+              <option value='' disabled selected>
+                {selecteddisagreestatements ? selecteddisagreestatements : 'Select'}
               </option>
-              ))
-          ) : (
-              <option>No data available</option>
-          )}
+            {disagreestatements.length > 0 ? (
+                disagreestatements.map((item, index) => (
+                <option key={index} value={`${item.disagreestatements}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.disagreestatements} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
           </select>
           </div>
+
+
 
           <h3> Multiculturalism keeps different ethnic groups too segregated in society </h3>
           <p>For this last negative statement only use this scale:</p>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {negativestatementscale.length > 0 ? (
-              negativestatementscale.map((item, index) => (
-              <option key={index} value={item._id}> {/* Assuming _id is unique */}
-                  {item.negativestatementscale} {/* Assuming 'generation' is the label to display */}
+          <select className='styled-select'  onChange={handlenegativestatementscale}>
+            <option value='' disabled selected>
+                {selectednegativestatementscale ? selectednegativestatementscale : 'Select'}
               </option>
-              ))
-          ) : (
-              <option>No data available</option>
-          )}
+            {negativestatementscale.length > 0 ? (
+                negativestatementscale.map((item, index) => (
+                <option key={index} value={`${item.negativestatementscale}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.negativestatementscale} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
           </select>
           </div>
           
@@ -144,16 +154,19 @@ function Sectionthree() {
           <p>I have limited interactions with people from cultures/ethnicities different than my own</p>
           <p>I rarely, if ever, interact with people from other cultures/ethnicities </p>
           <div className="select-wrapper">
-          <select className='styled-select' value={selectedValue} onChange={handleSelectChange}>
-          {interactionculturalgroups.length > 0 ? (
-              interactionculturalgroups.map((item, index) => (
-              <option key={index} value={item.score}> {/* Assuming _id is unique */}
-                  {item.interactionculturalgroups} {/* Assuming 'generation' is the label to display */}
-              </option>
-              ))
-          ) : (
-              <option>No data available</option>
-          )}
+          <select className='styled-select'  onChange={handleinteractionculturalgroups}>
+            <option value='' disabled selected>
+                  {selectedinteractionculturalgroups ? selectedinteractionculturalgroups : 'Select'}
+                </option>
+            {interactionculturalgroups.length > 0 ? (
+                interactionculturalgroups.map((item, index) => (
+                <option key={index} value={`${item.interactionculturalgroups}|${item.score}`}> {/* Assuming _id is unique */}
+                    {item.interactionculturalgroups} {/* Assuming 'generation' is the label to display */}
+                </option>
+                ))
+            ) : (
+                <option>No data available</option>
+            )}
           </select>
           </div>
 

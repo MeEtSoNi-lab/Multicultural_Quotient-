@@ -5,6 +5,7 @@ function StepContext() {
     const [calculatedScore,setcalculatedScore]=useState(null);
   const [showSurvey, setShowSurvey] = useState(false);
   const[currentScore,setcurrentScore]=useState(0);
+  const [finalScore,setfinalScore]=useState(0);
   //sectionone survey states
   const [bornData, setBornData] = useState([]);
   const [countryData, setcountryData] = useState([]);
@@ -43,13 +44,35 @@ function StepContext() {
     const [selectedcontentengagement,setselectedcontentengagement]=useState('');
 
     // states to store the score 
-    const[selectedyearsofrecidenceScore,setselectedyearsofrecidenceScore] = useState('');
-    const[selectednumbercountriesScore,setselectednumbercountriesScore]=useState('');
-    const[selectedtraveledcountriesScore,setselectedtraveledcountriesScore]=useState('');
-    const[selectedlanguageconverseScore,setselectedlanguageconverseScore]=useState('');
-    const[selectedculturalfoodScore,setselectedculturalfoodScore]=useState('');
-    const[selectedcontentengagementScore,setselectedcontentengagementScore]=useState('');
+    const[selectedyearsofrecidenceScore,setselectedyearsofrecidenceScore] = useState(0);
+    const[selectednumbercountriesScore,setselectednumbercountriesScore]=useState(0);
+    const[selectedtraveledcountriesScore,setselectedtraveledcountriesScore]=useState(0);
+    const[selectedlanguageconverseScore,setselectedlanguageconverseScore]=useState(0);
+    const[selectedculturalfoodScore,setselectedculturalfoodScore]=useState(0);
+    const[selectedcontentengagementScore,setselectedcontentengagementScore]=useState(0);
     const [previousCountryScore, setPreviousCountryScore] = useState(0);
+
+  // section three survey states 
+
+    // states for fetching the API
+    const [multiculturalismbenefits, setmulticulturalismbenefits] = useState([]);
+    const [disagreestatements,setdisagreestatements]=useState([]);
+    const [negativestatementscale,setnegativestatementscale]=useState([]);
+    const [interactionculturalgroups,setinteractionculturalgroups]=useState([]);
+
+    // display and selected data from dropdown
+    const [selectedmulticulturalismbenefits,setselectedmulticulturalismbenefits]=useState('')
+    const [selecteddisagreestatements,setselecteddisagreestatements]=useState('')
+    const [selectednegativestatementscale,setselectednegativestatementscale]=useState('')
+    const [selectedinteractionculturalgroups,setselectedinteractionculturalgroups]=useState('')
+
+    // states to store the score
+    const [selectedmulticulturalismbenefitsScore,setselectedmulticulturalismbenefitsScore]=useState('')
+    const [selecteddisagreestatementsScore,setselecteddisagreestatementsScore]=useState('')
+    const [selectednegativestatementscaleScore,setselectednegativestatementscaleScore]=useState('')
+    const [selectedinteractionculturalgroupsScore,setselectedinteractionculturalgroupsScore]=useState('')
+
+
 
 
   //methode to set current score
@@ -59,6 +82,14 @@ function StepContext() {
       console.log(currentScore)
     }
 
+  // method to calculate final score
+
+  const calculationofScore=()=>{
+    const finalcalculatedScore=parseInt(selectedbornDataScore)+parseInt(selectedcountryDataScore)+parseInt(selectedcountryResidenceScore)+
+                              parseInt(selectedyearsofrecidenceScore)+parseInt(selectednumbercountriesScore)+parseInt(selectedtraveledcountriesScore)+parseInt(selectedlanguageconverseScore)+parseInt(selectedculturalfoodScore)+parseInt(selectedcontentengagementScore)+parseInt(previousCountryScore)+
+                              parseInt(selectedmulticulturalismbenefitsScore)+parseInt(selecteddisagreestatementsScore)+parseInt(selectednegativestatementscaleScore)+parseInt(selectedinteractionculturalgroupsScore)
+  console.log("Final score is :", parseInt(selectedbornDataScore) +parseInt(selectedcountryDataScore) )
+                            }
 
   //methodes to set values of section one form 
   const handlebornData = (e) => {
@@ -172,12 +203,44 @@ function StepContext() {
     console.log("Associated contentengagement score is :", score)
   }
 
+// methodes to set values for section three form
+  const handlemulticulturalismbenefits =(e)=>{
+    const [multiculturalismbenefits,score]=e.target.value.split('|')
+    setselectedmulticulturalismbenefits(multiculturalismbenefits)
+    setselectedmulticulturalismbenefitsScore(score)
+    console.log("Selected multiculturalismbenefits is :",multiculturalismbenefits)
+    console.log("Associated multiculturalismbenefits score is : ", score)
+  }
+
+  const handledisagreestatements=(e)=>{
+    const [disagreestatements,score]=e.target.value.split('|')
+    setselecteddisagreestatements(disagreestatements)
+    setselecteddisagreestatementsScore(score)
+    console.log("Selected disagreestatements is :",disagreestatements)
+    console.log("Associated disagreestatements score is : ", score)
+  }
+  
+  const handlenegativestatementscale=(e)=>{
+    const [negativestatementscale,score]=e.target.value.split('|')
+    setselectednegativestatementscale(negativestatementscale)
+    setselectednegativestatementscaleScore(score)
+    console.log("Selected negativestatementscale is :",negativestatementscale)
+    console.log("Associated negativestatementscale score is : ", score)
+  }
+
+  const handleinteractionculturalgroups=(e)=>{
+    const [interactionculturalgroups,score]=e.target.value.split('|')
+    setselectedinteractionculturalgroups(interactionculturalgroups)
+    setselectedinteractionculturalgroupsScore(score)
+    console.log("Selected interactionculturalgroups is :",interactionculturalgroups)
+    console.log("Associated interactionculturalgroups score is : ", score)
+  }
 
   return (
     <div>
         <multiStepContext.Provider 
         value={{
-          currentScore,
+          currentScore,calculationofScore,
           // states of first section
           calculatedScore,setcalculatedScore,showSurvey, setShowSurvey,
           bornData, setBornData,handlebornData,selectedbornData,selectedbornDataValue,selectedbornDataScore,
@@ -190,6 +253,13 @@ function StepContext() {
           languageconverse,setlanguageconverse,selectedlanguageconverse,setselectedlanguageconverse,handlelanguageconverse,
           culturalfood,setculturalfood,selectedculturalfood,setselectedculturalfood,handleculturalfood,
           contentengagement,setcontentengagement,selectedcontentengagement,setselectedcontentengagement,handlecontentengagement,
+
+          //states for third section
+          multiculturalismbenefits, setmulticulturalismbenefits,selectedmulticulturalismbenefits,selectedmulticulturalismbenefitsScore,handlemulticulturalismbenefits,
+          disagreestatements,setdisagreestatements,selecteddisagreestatements,selecteddisagreestatementsScore,handledisagreestatements,
+          negativestatementscale,setnegativestatementscale,selectednegativestatementscale,selectednegativestatementscaleScore,handlenegativestatementscale,
+          interactionculturalgroups,setinteractionculturalgroups,selectedinteractionculturalgroups,selectedinteractionculturalgroupsScore,handleinteractionculturalgroups
+
         }}>
             <App/>
         </multiStepContext.Provider>
