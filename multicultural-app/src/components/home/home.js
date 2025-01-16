@@ -9,7 +9,7 @@ import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale } f
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
 function Home() {
-  const { calculatedScore} = useContext(multiStepContext);
+  const { calculatedScore,finalScore} = useContext(multiStepContext);
 
  
   // Data for the Donut chart
@@ -94,7 +94,7 @@ function Home() {
           <div className='donut-chart-container'>
             <Doughnut data={chartData} options={chartOptions} />
             <div className='score-text'>
-              <h1>{calculatedScore} / 140</h1>
+              <h1>{calculatedScore}</h1>
             </div>
           </div>
         </div>

@@ -27,17 +27,10 @@ function Survey() {
   const progressPercentage = (currentStep / 3) * 100;
 
   const submitscore = () => {
-    setcalculatedScore(40);
-    setShowSurvey(false);
-    // Navigate to the home route and scroll to the score section
-    navigate('/');
-    // Scroll to the score section after navigation
-    setTimeout(() => {
-      const scoreSection = document.getElementById('score');
-      if (scoreSection) {
-        scoreSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100); // Slight delay to allow for page load
+    
+    calculationofScore()
+    navigate('/results');
+  
   };
 
   return (
@@ -71,11 +64,11 @@ function Survey() {
           <button onClick={nextStep}>Next</button> // Show "Next" button if not on the last step
         )}
         {currentStep === 3 && (
-          <button onClick={() =>calculationofScore()}>Calculate score</button> // Show "Submit" on last step
+          <button onClick={() => submitscore()}>Calculate score</button> // Show "Submit" on last step
         )}
       </div>
 
-      <h1>Your current score is : {currentScore}</h1>
+      
     </div>
   );
 }

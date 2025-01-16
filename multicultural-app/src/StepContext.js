@@ -1,7 +1,10 @@
 import React,{use, useState} from 'react'
 import App from './App'
+import { useNavigate } from 'react-router-dom';
 export const multiStepContext = React.createContext();
 function StepContext() {
+
+
     const [calculatedScore,setcalculatedScore]=useState(null);
   const [showSurvey, setShowSurvey] = useState(false);
   const[currentScore,setcurrentScore]=useState(0);
@@ -85,11 +88,35 @@ function StepContext() {
   // method to calculate final score
 
   const calculationofScore=()=>{
-    const finalcalculatedScore=parseInt(selectedbornDataScore)+parseInt(selectedcountryDataScore)+parseInt(selectedcountryResidenceScore)+
-                              parseInt(selectedyearsofrecidenceScore)+parseInt(selectednumbercountriesScore)+parseInt(selectedtraveledcountriesScore)+parseInt(selectedlanguageconverseScore)+parseInt(selectedculturalfoodScore)+parseInt(selectedcontentengagementScore)+parseInt(previousCountryScore)+
-                              parseInt(selectedmulticulturalismbenefitsScore)+parseInt(selecteddisagreestatementsScore)+parseInt(selectednegativestatementscaleScore)+parseInt(selectedinteractionculturalgroupsScore)
+    const safeParse = (value) => parseInt(value) || 0;
+    const finalcalculatedScore=    safeParse(selectedbornDataScore) +
+    safeParse(selectedcountryDataScore) +
+    safeParse(selectedcountryResidenceScore) +
+    safeParse(selectedyearsofrecidenceScore) +
+    safeParse(selectednumbercountriesScore) +
+    safeParse(selectedtraveledcountriesScore) +
+    safeParse(selectedlanguageconverseScore) +
+    safeParse(selectedculturalfoodScore) +
+    safeParse(selectedcontentengagementScore) +
+    safeParse(previousCountryScore) +
+    safeParse(selectedmulticulturalismbenefitsScore) +
+    safeParse(selecteddisagreestatementsScore) +
+    safeParse(selectednegativestatementscaleScore) +
+    safeParse(selectedinteractionculturalgroupsScore);
   console.log("Final score is :", parseInt(selectedbornDataScore) +parseInt(selectedcountryDataScore) )
-                            }
+
+    setcalculatedScore(finalcalculatedScore);
+
+    // Navigate to the home route and scroll to the score section
+   
+    // Scroll to the score section after navigation
+    setTimeout(() => {
+      const scoreSection = document.getElementById('score');
+      if (scoreSection) {
+        scoreSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // Slight delay to allow for page load
+}
 
   //methodes to set values of section one form 
   const handlebornData = (e) => {
@@ -99,23 +126,25 @@ function StepContext() {
     updatecurrentScore(score);
   };
 
+  const calculateCountryScore = (data)=>{
+    const {Individualism,Indulgence,PowerDistance,UncertaintyAvoidance} =data;
+    let score=0;
+    score += parseInt(Individualism) > 70 ? 10 : 0
+    score += parseInt(Indulgence) < 40 ? -10 : 0
+    score += parseInt(PowerDistance) < 40 ? 10 : 0
+    score += parseInt(UncertaintyAvoidance) > 48 ? 10 : 0
+    score += 5 // All rest
+
+    return score;
+  }
+
   const handlecountryData = (e) => {
    
     const selectedData=JSON.parse(e.target.value);
     console.log(selectedData)
     const { name, Individualism: origIndividualism, Indulgence: origIndulgence, PowerDistance: origPowerDistance, UncertaintyAvoidance: origUncertaintyAvoidance } = selectedData;
-    
-      // Declare variables to modify values
-      let Individualism, Indulgence, PowerDistance, UncertaintyAvoidance;
 
-      // Apply logic to Individualism
-      Individualism = parseInt(origIndividualism) > 70 ? 10 : 0;
-      Indulgence = parseInt(origIndulgence) < 40 ? -10 :0;
-      PowerDistance = parseInt(origPowerDistance) <40 ? 10 : 0;
-      UncertaintyAvoidance = parseInt (origUncertaintyAvoidance) > 48 ? 10 : 0;
-      const AllRest=5;
-
-      const countryScore= Individualism + Indulgence + PowerDistance + UncertaintyAvoidance + AllRest;
+      const countryScore= calculateCountryScore(selectedData);
   
       setselectedcountryDataScore(countryScore);
       setselectedcountryDataValue(name);
@@ -126,21 +155,10 @@ function StepContext() {
 
 
   const handlecountryResidence = (e) => {
-    const selectedData=JSON.parse(e.target.value);
-    console.log(selectedData)
-    const { name, Individualism: origIndividualism, Indulgence: origIndulgence, PowerDistance: origPowerDistance, UncertaintyAvoidance: origUncertaintyAvoidance } = selectedData;
-    
-      // Declare variables to modify values
-      let Individualism, Indulgence, PowerDistance, UncertaintyAvoidance;
-
-      // Apply logic to Individualism
-      Individualism = parseInt(origIndividualism) > 70 ? 10 : 0;
-      Indulgence = parseInt(origIndulgence) < 40 ? -10 :0;
-      PowerDistance = parseInt(origPowerDistance) <40 ? 10 : 0;
-      UncertaintyAvoidance = parseInt (origUncertaintyAvoidance) > 48 ? 10 : 0;
-      const AllRest=5;
-      const countryResidenceScore= Individualism + Indulgence + PowerDistance + UncertaintyAvoidance + AllRest;
-
+      const selectedData=JSON.parse(e.target.value);
+      console.log(selectedData)
+      const { name, Individualism: origIndividualism, Indulgence: origIndulgence, PowerDistance: origPowerDistance, UncertaintyAvoidance: origUncertaintyAvoidance } = selectedData;
+      const countryResidenceScore =calculateCountryScore(selectedData)
       setselectedcountryResidenceScore(countryResidenceScore);
       setselectedcountryResidenceValue(name);
       updatecurrentScore(countryResidenceScore);
@@ -240,7 +258,7 @@ function StepContext() {
     <div>
         <multiStepContext.Provider 
         value={{
-          currentScore,calculationofScore,
+          currentScore,calculationofScore,finalScore,
           // states of first section
           calculatedScore,setcalculatedScore,showSurvey, setShowSurvey,
           bornData, setBornData,handlebornData,selectedbornData,selectedbornDataValue,selectedbornDataScore,

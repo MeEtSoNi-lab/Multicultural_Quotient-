@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <StepContext>
   <React.StrictMode>
- <App />
+      <App />
 </React.StrictMode>
 </StepContext>
 );
