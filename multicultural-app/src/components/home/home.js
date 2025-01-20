@@ -41,12 +41,12 @@ function Home() {
  
   return (
     <>
-      <div className='home-first-container'>
+      {/* <div className='home-first-container'>
         <div className='home-content'>
           <h1>What's Your Multicultural Quotient ?</h1>
           
         </div>
-      </div>
+      </div> */}
 
       {/* <div className='home-second-container'>
         <h2>"We are living in a multicultural era."</h2>
@@ -89,7 +89,7 @@ function Home() {
         </div>
       
         
-      {calculatedScore && (
+      {/* {calculatedScore && (
         <div id='score' className='home-score-container'>
           <div className='donut-chart-container'>
             <Doughnut data={chartData} options={chartOptions} />
@@ -98,7 +98,7 @@ function Home() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }

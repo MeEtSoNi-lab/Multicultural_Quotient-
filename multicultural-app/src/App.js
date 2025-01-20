@@ -4,7 +4,7 @@ import Home from './components/home/home';
 import Footer from './components/footer/footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Results from './components/results/results';
-
+import Header from './components/header/Header';
 import { multiStepContext } from './StepContext';
 import React from 'react';
 
@@ -36,6 +36,7 @@ function App() {
 
   return (
     <Router>
+      <Header/>
       <Routes>
         <Route
           path="/"
