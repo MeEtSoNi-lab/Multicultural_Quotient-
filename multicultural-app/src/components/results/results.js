@@ -56,7 +56,7 @@ function Results() {
 
   return (
     <>
-      <h1>Calculated Score: {calculatedScore}</h1>
+      {/* <h1>Calculated Score: {calculatedScore}</h1> */}
       {calculatedScore && (
         <div id="score" className="home-score-container">
           <div className="donut-chart-container">
