@@ -5,10 +5,12 @@ export const multiStepContext = React.createContext();
 function StepContext() {
 
 
-    const [calculatedScore,setcalculatedScore]=useState(null);
+  const [calculatedScore,setcalculatedScore]=useState(null);
   const [showSurvey, setShowSurvey] = useState(false);
   const[currentScore,setcurrentScore]=useState(0);
   const [finalScore,setfinalScore]=useState(0);
+
+  
   //sectionone survey states
   const [bornData, setBornData] = useState([]);
   const [countryData, setcountryData] = useState([]);
@@ -126,6 +128,7 @@ function StepContext() {
     updatecurrentScore(score);
   };
 
+  // this calculateCountryScore methode is used by handlecountryData method and handleResidence method 
   const calculateCountryScore = (data)=>{
     const {Individualism,Indulgence,PowerDistance,UncertaintyAvoidance} =data;
     let score=0;
@@ -151,7 +154,6 @@ function StepContext() {
       updatecurrentScore(countryScore);
       
   };
-
 
 
   const handlecountryResidence = (e) => {
