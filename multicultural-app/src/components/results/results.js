@@ -1,15 +1,23 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext,useEffect } from 'react';
 import './results.css';
 import Survey from '../surveform/survey';
 import { multiStepContext } from '../../StepContext';
 import { Doughnut } from 'react-chartjs-2'; // Import Doughnut chart from react-chartjs-2
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale } from 'chart.js';
+import { useNavigate } from 'react-router-dom';
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
 function Results() {
   const { calculatedScore } = useContext(multiStepContext);
+  const navigate = useNavigate(); // Initialize useNavigate
 
+  // Redirect to the '/' page if the user refreshes
+  useEffect(() => {
+    if (!calculatedScore) {
+      navigate('/'); // Redirect to '/' if calculatedScore is not available
+    }
+  }, [calculatedScore, navigate]);
   // Function to determine chart colors based on calculatedScore
   const getChartColors = () => {
     if (calculatedScore > 125) {
