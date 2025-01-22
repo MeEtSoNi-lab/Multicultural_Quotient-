@@ -14,12 +14,14 @@ function Survey() {
   const nextStep = () => {
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1); // Move to the next step
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   };
 
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1); // Go back to the previous step
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   };
 
@@ -30,6 +32,7 @@ function Survey() {
     
     calculationofScore()
     navigate('/results');
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   
   };
 

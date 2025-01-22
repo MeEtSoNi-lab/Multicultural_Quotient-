@@ -7,6 +7,7 @@ import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale } f
 import { useNavigate } from 'react-router-dom';
 import MQ_Red from '../MQ-pages/MQ_Red';
 import MQ_Yellow from '../MQ-pages/MQ_Yellow';
+import MQ_Blue from '../MQ-pages/MQ_Blue';
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
 function Results() {
@@ -74,9 +75,11 @@ function Results() {
           </div>
         </div>
       )} */}
-      {calculatedScore > 125 && <MQ_Red/> }
-      {calculatedScore > 50 && <MQ_Yellow/>}
-      {calculatedScore < 50 && <MQ_Red/>}
+      {
+  calculatedScore > 125 ? <MQ_Blue /> :
+  calculatedScore >= 50 && calculatedScore <= 125 ? <MQ_Yellow /> :
+  calculatedScore < 50 && <MQ_Red />
+}
 
     </>
   );

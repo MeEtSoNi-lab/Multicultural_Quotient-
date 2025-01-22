@@ -1,20 +1,201 @@
-.MQ-Main-container{
-    width: 100%;
+/* MQ.css */
+.MQ-Main-container {
     display: flex;
-    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* Vertically center-aligns the image and content */
+    padding: 2rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    gap: 2rem;
+  }
+  
+  .MQ-Image-container {
+    flex: 1; /* Adjusts to share space with content */
+    max-width: 50%; /* Restricts image container size */
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+  }
+  
+  .MQ-Image-container img {
+    width: 100%;
+    height: auto;
+    animation: rotateImage 10s linear infinite; /* Applies the rotation animation */
+  }
+
+  
+  
+  @keyframes rotateImage {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .MQ-content-container {
+    flex: 2; /* Takes more space than the image */
+    max-width: 50%; /* Restricts content container size */
+    background-color: #ffffff;
+    padding: 1.5rem;
+  }
+  
+  .MQ-content-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .MQ-content-container h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .MQ-content-container p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  .MQ-content-container ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    list-style: disc;
+  }
+  
+  .MQ-content-container ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .common-container {
+    width: 100%;
+    margin: auto;
+    padding: 20px 30px; /* Added horizontal padding for spacing */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.8; /* Increased line-height for better readability */
+    background-color: #ffffff; /* Ensure a clean background */
+    border-radius: 10px; /* Rounded corners for a modern feel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
     box-sizing: border-box;
-}
-
-.MQ-Image-container{
-    width: 50%;
+  }
+  
+  .main-title {
     text-align: center;
-}
+    font-size: 2.5rem;
+    margin-bottom: 25px; /* Added spacing below the title */
+    color: #d9534f; /* Warm red-orange for the title */
+  }
+  
+  .section {
+    margin-bottom: 50px; /* Increased spacing between sections */
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px; /* Added more space below the section title */
+    border-left: 4px solid #5cb85c; /* Green for section title border */
+    padding-left: 15px; /* Increased padding for better alignment */
+    color: #5cb85c; /* Matching green text for the section title */
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures clean borders */
+    margin: 20px 0; /* Adds spacing around the table */
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #ddd; /* Adds clear borders */
+    padding: 12px 15px; /* Adds comfortable spacing */
+  }
+  
+  .custom-table th {
+    background-color: #5bc0de; /* Light cyan for the header */
+    color: #ffffff; /* White text for headers */
+    text-transform: uppercase; /* Makes headers standout */
+    font-weight: bold;
+  }
+  
+  .custom-table tr:nth-child(even) {
+    background-color: #fdf2e9; /* Light orange for alternating rows */
+  }
+  
+  .custom-table tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light gray for alternating rows */
+  }
+  
+  .custom-table tr:hover {
+    background-color: #e9f7f9; /* Soft cyan for hover effect */
+  }
+  
+  .custom-table td {
+    color: #333; /* Text color for table cells */
+  }
+  
+  .custom-table th:first-child,
+  .custom-table td:first-child {
+    border-left: 2px solid #5cb85c; /* Green left border for alignment */
+  }
+  
+  .custom-table th:last-child,
+  .custom-table td:last-child {
+    border-right: 2px solid #d9534f; /* Red right border for emphasis */
+  }
+  
+  .custom-table th {
+    border-top: 2px solid #5cb85c; /* Green top border for the header */
+  }
+  
+  .custom-table tr:last-child td {
+    border-bottom: 2px solid #d9534f; /* Red bottom border for the last row */
+  }
+  
+  .custom-list {
+    padding-left: 20px;
+    margin-bottom: 30px; /* Increased spacing for lists */
+  }
+  
+  .custom-list li {
+    margin-bottom: 15px; /* Added space between list items */
+  }
+  
+  .numbered-list {
+    list-style: decimal;
+    margin-left: 20px; /* Proper indentation for numbered lists */
+  }
+  
+  .highlight {
+    font-size: 1.4rem;
+    color: #f0ad4e; /* Warm orange for highlight text */
+    margin-bottom: 15px; /* Added spacing below highlight title */
+  }
+  
+  .highlight-text {
+    background-color: #fef7e3; /* Light yellow for highlight background */
+    border-left: 4px solid #f0ad4e; /* Orange border for emphasis */
+    padding: 15px; /* Added padding for better emphasis */
+    font-style: italic;
+    margin-bottom: 20px; /* Added spacing below highlight text */
+  }
+  
 
-.MQ-Image-container img{
-    width: 500px;
-    height: 500px;
-}
 
-.MQ-content-container{
-    width: 50%;
-}
+  @media (max-width: 768px) {
+    .MQ-Main-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .MQ-Image-container,
+    .MQ-content-container {
+      max-width: 90%;
+    }
+  }
+  
