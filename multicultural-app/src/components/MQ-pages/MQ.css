@@ -1,0 +1,20 @@
+.MQ-Main-container{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.MQ-Image-container{
+    width: 50%;
+    text-align: center;
+}
+
+.MQ-Image-container img{
+    width: 500px;
+    height: 500px;
+}
+
+.MQ-content-container{
+    width: 50%;
+}

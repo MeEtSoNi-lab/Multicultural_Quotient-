@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://multicultural-quotient-backend.onrender.com";
+const API_BASE_URL = "http://localhost:5000";
 
 // lpocal host link : http://localhost:5000
 // deployed link : https://multicultural-quotient-backend.onrender.com

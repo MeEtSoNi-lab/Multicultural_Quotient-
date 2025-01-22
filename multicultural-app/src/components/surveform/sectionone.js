@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import API_BASE_URL from '../../apiconfig';
-import './sectionone.css'
+import './section.css'
 import { multiStepContext } from '../../StepContext';
 function SectionOne() {
  const { bornData, setBornData,handlebornData,selectedbornDataValue,
@@ -49,7 +49,7 @@ function SectionOne() {
 
   return (
     <div className='section-form'>
-      <div className='section-one-form'>
+      <div className='section-form'>
 
   {/* BirthYear question */}
             <h3>What is your birth year ?</h3>

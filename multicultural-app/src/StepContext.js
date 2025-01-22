@@ -65,18 +65,39 @@ function StepContext() {
     const [negativestatementscale,setnegativestatementscale]=useState([]);
     const [interactionculturalgroups,setinteractionculturalgroups]=useState([]);
 
+
     // display and selected data from dropdown
     const [selectedmulticulturalismbenefits,setselectedmulticulturalismbenefits]=useState('')
     const [selecteddisagreestatements,setselecteddisagreestatements]=useState('')
+    const[selectedADSOne,setselectedADSOne]=useState('')
+    const[selectedADSTwo,setselectedADSTwo]=useState('')
+    const[selectedADSThree,setselectedADSThree]=useState('')
+    const[selectedADSFour,setselectedADSFour]=useState('')
+    const[selectedADSFive,setselectedADSFive]=useState('')
+
     const [selectednegativestatementscale,setselectednegativestatementscale]=useState('')
     const [selectedinteractionculturalgroups,setselectedinteractionculturalgroups]=useState('')
+    const [selectedCGIOne,setselectedCGIOne]=useState('')
+    const [selectedCGITwo,setselectedCGITwo]=useState('')
+    const [selectedCGIThree,setselectedCGIThree]=useState('')
+    const [selectedCGIFour,setselectedCGIFour]=useState('')
+
+
 
     // states to store the score
     const [selectedmulticulturalismbenefitsScore,setselectedmulticulturalismbenefitsScore]=useState('')
     const [selecteddisagreestatementsScore,setselecteddisagreestatementsScore]=useState('')
+    const[selectedADSOneScore,setselectedADSOneScore]=useState('')
+    const[selectedADSTwoScore,setselectedADSTwoScore]=useState('')
+    const[selectedADSThreeScore,setselectedADSThreeScore]=useState('')
+    const[selectedADSFourScore,setselectedADSFourScore]=useState('')
+    const[selectedADSFiveScore,setselectedADSFiveScore]=useState('')
     const [selectednegativestatementscaleScore,setselectednegativestatementscaleScore]=useState('')
     const [selectedinteractionculturalgroupsScore,setselectedinteractionculturalgroupsScore]=useState('')
-
+    const [selectedCGIOneScore,setselectedCGIOneScore]=useState('')
+    const [selectedCGITwoScore,setselectedCGITwoScore]=useState('')
+    const [selectedCGIThreeScore,setselectedCGIThreeScore]=useState('')
+    const [selectedCGIFourScore,setselectedCGIFourScore]=useState('')
 
 
 
@@ -102,9 +123,16 @@ function StepContext() {
     safeParse(selectedcontentengagementScore) +
     safeParse(previousCountryScore) +
     safeParse(selectedmulticulturalismbenefitsScore) +
-    safeParse(selecteddisagreestatementsScore) +
+    safeParse(selectedADSOneScore) +
+    safeParse(selectedADSTwoScore) +
+    safeParse(selectedADSThreeScore) +
+    safeParse(selectedADSFourScore) +
+    safeParse(selectedADSFiveScore) +
     safeParse(selectednegativestatementscaleScore) +
-    safeParse(selectedinteractionculturalgroupsScore);
+    safeParse(selectedCGIOneScore)+
+    safeParse(selectedCGITwoScore)+
+    safeParse(selectedCGIThreeScore)+
+    safeParse(selectedCGIFourScore);
   console.log("Final score is :", parseInt(selectedbornDataScore) +parseInt(selectedcountryDataScore) )
 
     setcalculatedScore(finalcalculatedScore);
@@ -240,6 +268,46 @@ function StepContext() {
     console.log("Associated disagreestatements score is : ", score)
   }
   
+  const handleADSOne=(e)=>{
+    const [disagreestatements,score]=e.target.value.split('|')
+    setselectedADSOne(disagreestatements)
+    setselectedADSOneScore(score)
+    console.log("Selected disagreestatements is :",disagreestatements)
+    console.log("Associated disagreestatements score is : ", score)
+  }
+
+  const handleADSTwo=(e)=>{
+    const [disagreestatements,score]=e.target.value.split('|')
+    setselectedADSTwo(disagreestatements)
+    setselectedADSTwoScore(score)
+    console.log("Selected disagreestatements is :",disagreestatements)
+    console.log("Associated disagreestatements score is : ", score)
+  }
+
+  const handleADSThree=(e)=>{
+    const [disagreestatements,score]=e.target.value.split('|')
+    setselectedADSThree(disagreestatements)
+    setselectedADSThreeScore(score)
+    console.log("Selected disagreestatements is :",disagreestatements)
+    console.log("Associated disagreestatements score is : ", score)
+  }
+
+  const handleADSFour=(e)=>{
+    const [disagreestatements,score]=e.target.value.split('|')
+    setselectedADSFour(disagreestatements)
+    setselectedADSFourScore(score)
+    console.log("Selected disagreestatements is :",disagreestatements)
+    console.log("Associated disagreestatements score is : ", score)
+  }
+
+  const handleADSFive=(e)=>{
+    const [disagreestatements,score]=e.target.value.split('|')
+    setselectedADSFive(disagreestatements)
+    setselectedADSFiveScore(score)
+    console.log("Selected disagreestatements is :",disagreestatements)
+    console.log("Associated disagreestatements score is : ", score)
+  }
+
   const handlenegativestatementscale=(e)=>{
     const [negativestatementscale,score]=e.target.value.split('|')
     setselectednegativestatementscale(negativestatementscale)
@@ -256,6 +324,37 @@ function StepContext() {
     console.log("Associated interactionculturalgroups score is : ", score)
   }
 
+  const handleCGIOne=(e)=>{
+    const [interactionculturalgroups,score]=e.target.value.split('|')
+    setselectedCGIOne(interactionculturalgroups)
+    setselectedCGIOneScore(score)
+    console.log("Selected interactionculturalgroups is :",interactionculturalgroups)
+    console.log("Associated interactionculturalgroups score is : ", score)
+  }
+
+  const handleCGITwo=(e)=>{
+    const [interactionculturalgroups,score]=e.target.value.split('|')
+    setselectedCGITwo(interactionculturalgroups)
+    setselectedCGITwoScore(score)
+    console.log("Selected interactionculturalgroups is :",interactionculturalgroups)
+    console.log("Associated interactionculturalgroups score is : ", score)
+  }
+
+  const handleCGIThree=(e)=>{
+    const [interactionculturalgroups,score]=e.target.value.split('|')
+    setselectedCGIThree(interactionculturalgroups)
+    setselectedCGIThreeScore(score)
+    console.log("Selected interactionculturalgroups is :",interactionculturalgroups)
+    console.log("Associated interactionculturalgroups score is : ", score)
+  }
+
+  const handleCGIFour=(e)=>{
+    const [interactionculturalgroups,score]=e.target.value.split('|')
+    setselectedCGIFour(interactionculturalgroups)
+    setselectedCGIFourScore(score)
+    console.log("Selected interactionculturalgroups is :",interactionculturalgroups)
+    console.log("Associated interactionculturalgroups score is : ", score)
+  }
   return (
     <div>
         <multiStepContext.Provider 
@@ -276,9 +375,9 @@ function StepContext() {
 
           //states for third section
           multiculturalismbenefits, setmulticulturalismbenefits,selectedmulticulturalismbenefits,selectedmulticulturalismbenefitsScore,handlemulticulturalismbenefits,
-          disagreestatements,setdisagreestatements,selecteddisagreestatements,selecteddisagreestatementsScore,handledisagreestatements,
+          disagreestatements,setdisagreestatements,selecteddisagreestatements,selecteddisagreestatementsScore,handledisagreestatements,selectedADSOne,selectedADSTwo,selectedADSThree,selectedADSFour,selectedADSFive,selectedADSOneScore,selectedADSTwoScore,selectedADSThreeScore,selectedADSFourScore,selectedADSFiveScore,handleADSOne,handleADSTwo,handleADSThree,handleADSFour,handleADSFive,
           negativestatementscale,setnegativestatementscale,selectednegativestatementscale,selectednegativestatementscaleScore,handlenegativestatementscale,
-          interactionculturalgroups,setinteractionculturalgroups,selectedinteractionculturalgroups,selectedinteractionculturalgroupsScore,handleinteractionculturalgroups
+          interactionculturalgroups,setinteractionculturalgroups,selectedinteractionculturalgroups,selectedinteractionculturalgroupsScore,handleinteractionculturalgroups,selectedCGIOne,selectedCGITwo,selectedCGIThree,selectedCGIFour,selectedCGIOneScore,selectedCGITwoScore,selectedCGIThreeScore,selectedCGIFourScore,handleCGIOne,handleCGITwo,handleCGIThree,handleCGIFour,
 
         }}>
             <App/>

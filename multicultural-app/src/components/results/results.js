@@ -5,7 +5,8 @@ import { multiStepContext } from '../../StepContext';
 import { Doughnut } from 'react-chartjs-2'; // Import Doughnut chart from react-chartjs-2
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale } from 'chart.js';
 import { useNavigate } from 'react-router-dom';
-
+import MQ_Red from '../MQ-pages/MQ_Red';
+import MQ_Yellow from '../MQ-pages/MQ_Yellow';
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
 function Results() {
@@ -57,7 +58,7 @@ function Results() {
   return (
     <>
       {/* <h1>Calculated Score: {calculatedScore}</h1> */}
-      {calculatedScore && (
+      {/* {calculatedScore && (
         <div id="score" className="home-score-container">
           <div className="donut-chart-container">
             <Doughnut data={chartData} options={chartOptions} />
@@ -72,7 +73,11 @@ function Results() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
+      {calculatedScore > 125 && <MQ_Red/> }
+      {calculatedScore > 50 && <MQ_Yellow/>}
+      {calculatedScore < 50 && <MQ_Red/>}
+
     </>
   );
 }

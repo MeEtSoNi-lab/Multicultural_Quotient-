@@ -1,6 +1,6 @@
 import React, { useState, useEffect,useContext } from 'react';
 import API_BASE_URL from '../../apiconfig';
-import "./sectiontwo.css"
+import "./section.css"
 import { multiStepContext } from '../../StepContext';
 
 function Sectiontwo() {
@@ -114,8 +114,8 @@ function Sectiontwo() {
       }, []);
   return (
     <div className='section-form'>
-    <div className='section-two-form'>
-          <h3>How many years have you lived in your country of residence? ?</h3>
+    <div className='section-form'>
+          <h3>How many years have you lived in your country of residence?</h3>
           <div className="select-wrapper">
           <select className='styled-select'   onChange={handleyearsofrecidence}>
                 <option value="" disabled selected>

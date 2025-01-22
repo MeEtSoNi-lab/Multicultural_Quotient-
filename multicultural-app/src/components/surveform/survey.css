@@ -1,4 +1,6 @@
-
+.survey-form-box{
+  width: 90%;
+}
 
 .survey-form-box h3{
   color: #e63946;
@@ -57,3 +59,6 @@
     background-color: #e63946;
   }
   
+  input[type="radio"] {
+    appearance: auto; /* Ensure the browser's native radio button style is used */
+  }
