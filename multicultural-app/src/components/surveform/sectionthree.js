@@ -8,6 +8,7 @@ function Sectionthree() {
     disagreestatements,setdisagreestatements,selecteddisagreestatements,handledisagreestatements,selectedADSOne,selectedADSTwo,selectedADSThree,selectedADSFour,selectedADSFive,selectedADSOneScore,selectedADSTwoScore,selectedADSThreeScore,selectedADSFourScore,selectedADSFiveScore,handleADSOne,handleADSTwo,handleADSThree,handleADSFour,handleADSFive,
     negativestatementscale,setnegativestatementscale,selectednegativestatementscale,handlenegativestatementscale,
     interactionculturalgroups,setinteractionculturalgroups,selectedinteractionculturalgroups,handleinteractionculturalgroups,selectedCGIOne,selectedCGITwo,selectedCGIThree,selectedCGIFour,selectedCGIOneScore,selectedCGITwoScore,selectedCGIThreeScore,selectedCGIFourScore,handleCGIOne,handleCGITwo,handleCGIThree,handleCGIFour,
+    asians,setasians,
   }=useContext(multiStepContext);
  
   
@@ -70,11 +71,24 @@ function Sectionthree() {
         }
       };
 
+      const asianData = async () => {
+        try {
+          const response = await fetch(`${API_BASE_URL}/asians`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          const data = await response.json();
+          setasians(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
     multiculturalismbenefitsData();
     disagreestatementsData();
     negativestatementscaleData();
     interactionculturalgroupsData();
-   
+    asianData();
   }, []);
 
  
@@ -320,7 +334,9 @@ function Sectionthree() {
               )}
           </div>
 
-
+          
+          <h3>Below is a list of different racial, ethnic and cultural origins. With which racial, ethnic and/or cultural group(s) do you identify? (Select all that apply) </h3>
+          <p>Note that although this list is not exhaustive, we have included a wide variety of identities to be as inclusive as possible. We have provided options to enter other identities under “another” below if you do not see your identity listed. </p>
     </div>
   </div>
   )

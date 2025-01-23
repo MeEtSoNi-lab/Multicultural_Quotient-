@@ -197,5 +197,25 @@
     .MQ-content-container {
       max-width: 90%;
     }
+
+    .custom-table {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+      }
+    
+      .custom-table th,
+      .custom-table td {
+        padding: 10px; /* Reduce padding for better fit */
+      }
   }
   
+
+  @media (max-width: 480px) {
+    .custom-table {
+      font-size: 0.8rem; /* Further adjust font size for small screens */
+    }
+  
+    .custom-table th,
+    .custom-table td {
+      padding: 8px; /* Minimize padding for very small screens */
+    }
+  }

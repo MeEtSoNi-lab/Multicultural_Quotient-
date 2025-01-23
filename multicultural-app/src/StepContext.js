@@ -64,6 +64,7 @@ function StepContext() {
     const [disagreestatements,setdisagreestatements]=useState([]);
     const [negativestatementscale,setnegativestatementscale]=useState([]);
     const [interactionculturalgroups,setinteractionculturalgroups]=useState([]);
+    const [asians,setasians]=useState([]);
 
 
     // display and selected data from dropdown
@@ -378,6 +379,7 @@ function StepContext() {
           disagreestatements,setdisagreestatements,selecteddisagreestatements,selecteddisagreestatementsScore,handledisagreestatements,selectedADSOne,selectedADSTwo,selectedADSThree,selectedADSFour,selectedADSFive,selectedADSOneScore,selectedADSTwoScore,selectedADSThreeScore,selectedADSFourScore,selectedADSFiveScore,handleADSOne,handleADSTwo,handleADSThree,handleADSFour,handleADSFive,
           negativestatementscale,setnegativestatementscale,selectednegativestatementscale,selectednegativestatementscaleScore,handlenegativestatementscale,
           interactionculturalgroups,setinteractionculturalgroups,selectedinteractionculturalgroups,selectedinteractionculturalgroupsScore,handleinteractionculturalgroups,selectedCGIOne,selectedCGITwo,selectedCGIThree,selectedCGIFour,selectedCGIOneScore,selectedCGITwoScore,selectedCGIThreeScore,selectedCGIFourScore,handleCGIOne,handleCGITwo,handleCGIThree,handleCGIFour,
+          asians,setasians
 
         }}>
             <App/>
