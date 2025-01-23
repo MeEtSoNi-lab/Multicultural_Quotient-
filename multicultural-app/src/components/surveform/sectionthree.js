@@ -9,6 +9,13 @@ function Sectionthree() {
     negativestatementscale,setnegativestatementscale,selectednegativestatementscale,handlenegativestatementscale,
     interactionculturalgroups,setinteractionculturalgroups,selectedinteractionculturalgroups,handleinteractionculturalgroups,selectedCGIOne,selectedCGITwo,selectedCGIThree,selectedCGIFour,selectedCGIOneScore,selectedCGITwoScore,selectedCGIThreeScore,selectedCGIFourScore,handleCGIOne,handleCGITwo,handleCGIThree,handleCGIFour,
     asians,setasians,
+    multicultural,setmulticultural,
+    black,setblack,
+    latino,setlatino,
+    middleeastern,setmiddleeastern,
+    white,setwhite,
+    checkedCount, setCheckedCount,
+    checkedItems, setCheckedItems,
   }=useContext(multiStepContext);
  
   
@@ -84,13 +91,106 @@ function Sectionthree() {
           console.log(error);
         }
       };
+
+      const multiculturalData = async () => {
+        try {
+          const response = await fetch(`${API_BASE_URL}/multicultural`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          const data = await response.json();
+          setmulticultural(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      const blackData = async () => {
+        try {
+          const response = await fetch(`${API_BASE_URL}/blacks`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          const data = await response.json();
+          setblack(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      
+      const latinoData = async () => {
+        try {
+          const response = await fetch(`${API_BASE_URL}/latinos`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          const data = await response.json();
+          setlatino(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      const middleeasternData = async () => {
+        try {
+          const response = await fetch(`${API_BASE_URL}/middleeasterns`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          const data = await response.json();
+          setmiddleeastern(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      const whiteData = async () => {
+        try {
+          const response = await fetch(`${API_BASE_URL}/whites`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          const data = await response.json();
+          setwhite(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
     multiculturalismbenefitsData();
     disagreestatementsData();
     negativestatementscaleData();
     interactionculturalgroupsData();
     asianData();
+    multiculturalData();
+    blackData();
+    latinoData();
+    middleeasternData();
+    whiteData();
   }, []);
+  // Method to handle checkbox changes
+  const handleCheckboxChange = (index, score) => {
+    setCheckedItems((prevState) => {
+      const isChecked = prevState[index];
+      const updatedState = { ...prevState, [index]: !isChecked };
 
+      // Update total score and count based on the checkbox state
+      if (!isChecked) {
+     
+        setCheckedCount((prevCount) => prevCount + 1);
+      } else {
+       
+        setCheckedCount((prevCount) => prevCount - 1);
+      }
+
+      return updatedState;
+    });
+  }
  
   return (
     <div className='section-form'>
@@ -337,6 +437,109 @@ function Sectionthree() {
           
           <h3>Below is a list of different racial, ethnic and cultural origins. With which racial, ethnic and/or cultural group(s) do you identify? (Select all that apply) </h3>
           <p>Note that although this list is not exhaustive, we have included a wide variety of identities to be as inclusive as possible. We have provided options to enter other identities under “another” below if you do not see your identity listed. </p>
+          
+
+          <h1>checked items are {checkedCount}</h1>
+          <h4>MULTI-CULTURAL</h4> 
+          <div>
+            {multicultural.map((option, index) => (
+              <div key={index} style={{ marginBottom: "10px" }}>
+                <label>
+                  <input
+                    type="checkbox"
+                //     checked={!!checkedItems[index]}
+                // onChange={() => handleCheckboxChange(index, option.score)}
+                  />
+                  {option.MULTICULTURAL}
+                </label>
+              </div>
+            ))}
+          </div>
+
+
+          <h4>ASIAN</h4>
+          <div>
+            {asians.map((option, index) => (
+              <div key={index} style={{ marginBottom: "10px" }}>
+                <label>
+                  <input
+                    type="checkbox"
+                    // checked={!!checkedItems[index]}
+                    // onChange={() => handleCheckboxChange(index, option.score)}
+                  />
+                  {option.ASIAN}
+                </label>
+              </div>
+            ))}
+          </div>
+
+
+          <h4>BLACK</h4>
+          <div>
+            {black.map((option, index) => (
+              <div key={index} style={{ marginBottom: "10px" }}>
+                <label>
+                  <input
+                    type="checkbox"
+                    // checked={!!checkedItems[index]}
+                    // onChange={() => handleCheckboxChange(index, option.score)}
+                  />
+                  {option.black}
+                </label>
+              </div>
+            ))}
+          </div>
+          
+
+          <h4>Latino</h4>
+          <div>
+            {latino.map((option, index) => (
+              <div key={index} style={{ marginBottom: "10px" }}>
+                <label>
+                  <input
+                    type="checkbox"
+                    // checked={!!checkedItems[index]}
+                    // onChange={() => handleCheckboxChange(index, option.score)}
+                  />
+                  {option.latino}
+                </label>
+              </div>
+            ))}
+          </div>
+
+
+          <h4>Middleeastern</h4>
+          <div>
+            {middleeastern.map((option, index) => (
+              <div key={index} style={{ marginBottom: "10px" }}>
+                <label>
+                  <input
+                    type="checkbox"
+                    // checked={!!checkedItems[index]}
+                    // onChange={() => handleCheckboxChange(index, option.score)}
+                  />
+                  {option.middleeastern}
+                </label>
+              </div>
+            ))}
+          </div>
+
+
+          <h4>White</h4>
+          <div>
+            {white.map((option, index) => (
+              <div key={index} style={{ marginBottom: "10px" }}>
+                <label>
+                  <input
+                    type="checkbox"
+                    // checked={!!checkedItems[index]}
+                    // onChange={() => handleCheckboxChange(index, option.score)}
+                  />
+                  {option.white}
+                </label>
+              </div>
+            ))}
+          </div>
     </div>
   </div>
   )

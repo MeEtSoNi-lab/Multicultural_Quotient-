@@ -65,7 +65,11 @@ function StepContext() {
     const [negativestatementscale,setnegativestatementscale]=useState([]);
     const [interactionculturalgroups,setinteractionculturalgroups]=useState([]);
     const [asians,setasians]=useState([]);
-
+    const [multicultural,setmulticultural]=useState([]);
+    const [black,setblack]=useState([]);
+    const [latino,setlatino]=useState([]);
+    const [middleeastern,setmiddleeastern]=useState([]);
+    const [white,setwhite]=useState([]);
 
     // display and selected data from dropdown
     const [selectedmulticulturalismbenefits,setselectedmulticulturalismbenefits]=useState('')
@@ -75,13 +79,18 @@ function StepContext() {
     const[selectedADSThree,setselectedADSThree]=useState('')
     const[selectedADSFour,setselectedADSFour]=useState('')
     const[selectedADSFive,setselectedADSFive]=useState('')
-
     const [selectednegativestatementscale,setselectednegativestatementscale]=useState('')
     const [selectedinteractionculturalgroups,setselectedinteractionculturalgroups]=useState('')
     const [selectedCGIOne,setselectedCGIOne]=useState('')
     const [selectedCGITwo,setselectedCGITwo]=useState('')
     const [selectedCGIThree,setselectedCGIThree]=useState('')
     const [selectedCGIFour,setselectedCGIFour]=useState('')
+    const [selectedasians,setselectedasians]=useState('')
+    const [selectedmulticultural,setselectedmulticultural]=useState('')
+    const [selectedblack,setselectedblack]=useState('');
+    const [selectedlatino,setselectedlatino]=useState('');
+    const [selectedmiddleeastern,setselectedmiddleeastern]=useState('');
+    const [selectedwhite,setselectedwhite]=useState('');
 
 
 
@@ -99,7 +108,14 @@ function StepContext() {
     const [selectedCGITwoScore,setselectedCGITwoScore]=useState('')
     const [selectedCGIThreeScore,setselectedCGIThreeScore]=useState('')
     const [selectedCGIFourScore,setselectedCGIFourScore]=useState('')
-
+    const [selectedasiansScore,setselectedasiansScore]=useState('')
+    const [selectedmulticulturalScore,setselectedmulticulturalScore]=useState('')
+    const [selectedblackScore,setselectedblackScore]=useState('');
+    const [selectedlatinoScore,setselectedlatinoScore]=useState('');
+    const [selectedmiddleeasternScore,setselectedmiddleeasternScore]=useState('');
+    const [selectedwhiteScore,setselectedwhiteScore]=useState('');
+    const [checkedCount, setCheckedCount] = useState(0); // State to track the count of checked checkboxes
+    const [checkedItems, setCheckedItems] = useState({});
 
 
   //methode to set current score
@@ -356,6 +372,11 @@ function StepContext() {
     console.log("Selected interactionculturalgroups is :",interactionculturalgroups)
     console.log("Associated interactionculturalgroups score is : ", score)
   }
+
+
+  const handleasians=(e)=>{
+
+  }
   return (
     <div>
         <multiStepContext.Provider 
@@ -379,8 +400,12 @@ function StepContext() {
           disagreestatements,setdisagreestatements,selecteddisagreestatements,selecteddisagreestatementsScore,handledisagreestatements,selectedADSOne,selectedADSTwo,selectedADSThree,selectedADSFour,selectedADSFive,selectedADSOneScore,selectedADSTwoScore,selectedADSThreeScore,selectedADSFourScore,selectedADSFiveScore,handleADSOne,handleADSTwo,handleADSThree,handleADSFour,handleADSFive,
           negativestatementscale,setnegativestatementscale,selectednegativestatementscale,selectednegativestatementscaleScore,handlenegativestatementscale,
           interactionculturalgroups,setinteractionculturalgroups,selectedinteractionculturalgroups,selectedinteractionculturalgroupsScore,handleinteractionculturalgroups,selectedCGIOne,selectedCGITwo,selectedCGIThree,selectedCGIFour,selectedCGIOneScore,selectedCGITwoScore,selectedCGIThreeScore,selectedCGIFourScore,handleCGIOne,handleCGITwo,handleCGIThree,handleCGIFour,
-          asians,setasians
-
+          asians,setasians,selectedasians,selectedasiansScore,
+          multicultural,setmulticultural,selectedmulticultural,selectedmulticulturalScore,
+          black,setblack,selectedblack,selectedblackScore,
+          latino,setlatino,selectedlatino,selectedlatinoScore,
+          middleeastern,setmiddleeastern,selectedmiddleeastern,selectedmiddleeasternScore,
+          white,setwhite,selectedwhite,selectedwhiteScore,
         }}>
             <App/>
         </multiStepContext.Provider>
