@@ -3,7 +3,7 @@
 }
 
 .survey-form-box h3{
-  color: #e63946;
+  color: #000000;
 }
 
 /* Step indicator styling */
@@ -59,6 +59,4 @@
     background-color: #e63946;
   }
   
-  input[type="radio"] {
-    appearance: auto; /* Ensure the browser's native radio button style is used */
-  }
+  

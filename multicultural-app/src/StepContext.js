@@ -149,7 +149,8 @@ function StepContext() {
     safeParse(selectedCGIOneScore)+
     safeParse(selectedCGITwoScore)+
     safeParse(selectedCGIThreeScore)+
-    safeParse(selectedCGIFourScore);
+    safeParse(selectedCGIFourScore)+
+    safeParse(checkboxScore);
   console.log("Final score is :", parseInt(selectedbornDataScore) +parseInt(selectedcountryDataScore) )
 
     setcalculatedScore(finalcalculatedScore);
