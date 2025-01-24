@@ -1,5 +1,5 @@
 .survey-form-box{
-  width: 90%;
+  width: 100%;
 }
 
 .survey-form-box h3{
@@ -59,4 +59,12 @@
     background-color: #e63946;
   }
   
+  @media screen and (max-width: 768px) {
+     
+  .step-indicator span {
+    font-size: 13px;
+    font-weight: bold;
+    color: #aaa;
+  }
   
+  }
