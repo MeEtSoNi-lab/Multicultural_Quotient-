@@ -426,7 +426,7 @@ function Sectionthree() {
           <p>Note that although this list is not exhaustive, we have included a wide variety of identities to be as inclusive as possible. We have provided options to enter other identities under “another” below if you do not see your identity listed. </p>
           
 
-          <h1>checked items are {checkboxScore}</h1>
+         
           <h4>MULTI-CULTURAL</h4> 
           <div>
             {multicultural.map((option, index) => (
