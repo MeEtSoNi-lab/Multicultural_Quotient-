@@ -114,8 +114,8 @@ function StepContext() {
     const [selectedlatinoScore,setselectedlatinoScore]=useState('');
     const [selectedmiddleeasternScore,setselectedmiddleeasternScore]=useState('');
     const [selectedwhiteScore,setselectedwhiteScore]=useState('');
-    const [checkedCount, setCheckedCount] = useState(0); // State to track the count of checked checkboxes
-    const [checkedItems, setCheckedItems] = useState({});
+    const [checkedItems, setCheckedItems] = useState({}); // Track checked status of each checkbox
+    const [checkboxScore, setcheckboxScore] = useState(0); // Track the score
 
 
   //methode to set current score
@@ -373,10 +373,39 @@ function StepContext() {
     console.log("Associated interactionculturalgroups score is : ", score)
   }
 
+  const handleCheckboxChange = (category, index) => {
+    const key = `${category}-${index}`; // Unique key for each checkbox
 
-  const handleasians=(e)=>{
+    setCheckedItems((prev) => {
+      const updatedCheckedItems = {
+        ...prev,
+        [key]: !prev[key], // Toggle the checked status
+      };
 
-  }
+      // Calculate the number of checked checkboxes
+      const allCheckedKeys = Object.keys(updatedCheckedItems).filter(
+        (k) => updatedCheckedItems[k]
+      );
+
+      // Determine if any checkbox in the "multicultural" category is checked
+      const isMulticulturalChecked = multicultural.some((_, i) =>
+        updatedCheckedItems[`multicultural-${i}`]
+      );
+
+      // Update the score
+      if (isMulticulturalChecked) {
+        setcheckboxScore(10);
+      } else if (allCheckedKeys.length > 2) {
+        setcheckboxScore(5);
+      } else {
+        setcheckboxScore(0);
+      }
+
+      return updatedCheckedItems;
+    });
+  };
+
+
   return (
     <div>
         <multiStepContext.Provider 
@@ -406,6 +435,8 @@ function StepContext() {
           latino,setlatino,selectedlatino,selectedlatinoScore,
           middleeastern,setmiddleeastern,selectedmiddleeastern,selectedmiddleeasternScore,
           white,setwhite,selectedwhite,selectedwhiteScore,
+          checkedItems, setCheckedItems,
+          checkboxScore, setcheckboxScore,handleCheckboxChange,
         }}>
             <App/>
         </multiStepContext.Provider>

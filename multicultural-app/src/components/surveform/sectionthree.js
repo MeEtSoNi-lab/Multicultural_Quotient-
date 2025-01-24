@@ -14,8 +14,8 @@ function Sectionthree() {
     latino,setlatino,
     middleeastern,setmiddleeastern,
     white,setwhite,
-    checkedCount, setCheckedCount,
     checkedItems, setCheckedItems,
+    checkboxScore, setcheckboxScore,handleCheckboxChange,
   }=useContext(multiStepContext);
  
   
@@ -174,23 +174,10 @@ function Sectionthree() {
     whiteData();
   }, []);
   // Method to handle checkbox changes
-  const handleCheckboxChange = (index, score) => {
-    setCheckedItems((prevState) => {
-      const isChecked = prevState[index];
-      const updatedState = { ...prevState, [index]: !isChecked };
+ 
 
-      // Update total score and count based on the checkbox state
-      if (!isChecked) {
-     
-        setCheckedCount((prevCount) => prevCount + 1);
-      } else {
-       
-        setCheckedCount((prevCount) => prevCount - 1);
-      }
+  // Handle checkbox change
 
-      return updatedState;
-    });
-  }
  
   return (
     <div className='section-form'>
@@ -439,7 +426,7 @@ function Sectionthree() {
           <p>Note that although this list is not exhaustive, we have included a wide variety of identities to be as inclusive as possible. We have provided options to enter other identities under “another” below if you do not see your identity listed. </p>
           
 
-          <h1>checked items are {checkedCount}</h1>
+          <h1>checked items are {checkboxScore}</h1>
           <h4>MULTI-CULTURAL</h4> 
           <div>
             {multicultural.map((option, index) => (
@@ -447,8 +434,8 @@ function Sectionthree() {
                 <label>
                   <input
                     type="checkbox"
-                //     checked={!!checkedItems[index]}
-                // onChange={() => handleCheckboxChange(index, option.score)}
+                    checked={!!checkedItems[`multicultural-${index}`]}
+                    onChange={() => handleCheckboxChange("multicultural", index)}
                   />
                   {option.MULTICULTURAL}
                 </label>
@@ -464,8 +451,8 @@ function Sectionthree() {
                 <label>
                   <input
                     type="checkbox"
-                    // checked={!!checkedItems[index]}
-                    // onChange={() => handleCheckboxChange(index, option.score)}
+                    checked={!!checkedItems[`asians-${index}`]}
+                    onChange={() => handleCheckboxChange("asians", index)}
                   />
                   {option.ASIAN}
                 </label>
@@ -481,8 +468,8 @@ function Sectionthree() {
                 <label>
                   <input
                     type="checkbox"
-                    // checked={!!checkedItems[index]}
-                    // onChange={() => handleCheckboxChange(index, option.score)}
+                    checked={!!checkedItems[`black-${index}`]}
+                     onChange={() => handleCheckboxChange("black", index)}
                   />
                   {option.black}
                 </label>
@@ -498,8 +485,8 @@ function Sectionthree() {
                 <label>
                   <input
                     type="checkbox"
-                    // checked={!!checkedItems[index]}
-                    // onChange={() => handleCheckboxChange(index, option.score)}
+                    checked={!!checkedItems[`latino-${index}`]}
+                onChange={() => handleCheckboxChange("latino", index)}
                   />
                   {option.latino}
                 </label>
@@ -515,8 +502,8 @@ function Sectionthree() {
                 <label>
                   <input
                     type="checkbox"
-                    // checked={!!checkedItems[index]}
-                    // onChange={() => handleCheckboxChange(index, option.score)}
+                    checked={!!checkedItems[`middleeastern-${index}`]}
+                    onChange={() => handleCheckboxChange("middleeastern", index)}
                   />
                   {option.middleeastern}
                 </label>
@@ -532,8 +519,8 @@ function Sectionthree() {
                 <label>
                   <input
                     type="checkbox"
-                    // checked={!!checkedItems[index]}
-                    // onChange={() => handleCheckboxChange(index, option.score)}
+                    checked={!!checkedItems[`white-${index}`]}
+                    onChange={() => handleCheckboxChange("white", index)}
                   />
                   {option.white}
                 </label>

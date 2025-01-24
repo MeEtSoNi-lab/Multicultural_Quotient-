@@ -19,7 +19,7 @@ body {
     background-color: #f2f2f2;
    z-index: -1;
     top: -25px;
-    left: 50%;
+    left: 49%;
     transform: translateX(-30%)  ;
     transform: rotate(45deg);
     width: 50px;
