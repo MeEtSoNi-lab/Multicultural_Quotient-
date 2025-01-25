@@ -1,70 +1,68 @@
-.home-first-container{
-    padding-top: 20px;
-    position: relative;
-     height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-image: url('/public/images/multicultural.png');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-}
-.home-first-container::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.596); /* Light visibility effect */
-    z-index: 1;
+.home-first-container {
+  padding-top: 10px;
+  position: relative;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the content */
+  align-items: center;
+  background-image: url('/public/images/multicultural.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-  
+.home-first-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.596); /* Light visibility effect */
+  z-index: 1;
+}
+
+.home-content {
+  width: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Ensures text is vertically centered within its parent */
+  align-items: center;
+  height: 100%; /* Takes full height of the parent container */
+}
+
+.home-content h1 {
+  font-size: 65px;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0; /* Remove margins for proper centering */
+}
+
+@media screen and (max-width: 768px) {
   .home-content {
-    width: 50%;
-    margin: auto;
-    margin-top: 100px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .home-content h1 {
-    font-size: 65px;
-    text-align: center;
-    color: #ffffff;
-    line-height: 1.2;
-    margin-bottom: 100px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .home-content {
       width: 70%; /* Adjust content width */
-      margin-top: 50px;
-    }
-  
-    .home-content h1 {
+  }
+
+  .home-content h1 {
       font-size: 50px; /* Smaller font size */
-    }}
-    @media screen and (max-width: 480px) {
-        body, html {
-          margin: 0;
-          padding: 0;
-        }
-      .home-first-container{
-        width: 100%;
-      }
-        .home-content {
-          width: 100%; /* Full-width on small screens */
-          margin-top: 30px;
-        
-        }
-      
-        .home-content h1 {
-          font-size: 36px; /* Smaller font size */
-          line-height: 1.3;
-        }}
-        
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-first-container {
+      height: 300px; /* Optional: adjust container height for small screens */
+  }
+
+  .home-content {
+      width: 90%; /* Full-width on small screens */
+  }
+
+  .home-content h1 {
+      font-size: 36px; /* Smaller font size */
+      line-height: 1.3;
+  }
+}
