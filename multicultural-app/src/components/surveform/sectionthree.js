@@ -230,8 +230,7 @@ function Sectionthree() {
 
 
 
-          <h3> Multiculturalism keeps different ethnic groups too segregated in society </h3>
-          <h4>For this last negative statement only use this scale:</h4>
+          <h4> Multiculturalism keeps different ethnic groups too segregated in society </h4>
           <div className="radio-wrapper">
                 {negativestatementscale.length > 0 ? (
                   negativestatementscale.map((item, index) => (
@@ -256,8 +255,7 @@ function Sectionthree() {
           
 
 
-          <h3> Which of the following best describes your interactions with people from other ethnic/cultural groups?</h3>
-          <h4>I have close relationships with people from various cultures/ethnicities</h4>
+          <h4> Which of the following best describes your interactions with people from other ethnic/cultural groups?</h4>
             <div className="radio-wrapper">
                 {interactionculturalgroups.length > 0 ? (
                   interactionculturalgroups.map((item, index) => (
@@ -278,7 +276,7 @@ function Sectionthree() {
                   <p>No data available</p>
                 )}
             </div>
-          <h4>I work/interact with people from other cultures/ethnicities regularly, but mostly in passing or casual settings</h4>
+          {/* <h4>I work/interact with people from other cultures/ethnicities regularly, but mostly in passing or casual settings</h4>
             <div className="radio-wrapper">
                 {interactionculturalgroups.length > 0 ? (
                   interactionculturalgroups.map((item, index) => (
@@ -319,8 +317,8 @@ function Sectionthree() {
                 ) : (
                   <p>No data available</p>
                 )}
-            </div>
-          <h4>I rarely, if ever, interact with people from other cultures/ethnicities </h4>
+            </div> */}
+          {/* <h4>I rarely, if ever, interact with people from other cultures/ethnicities </h4>
           <div className="radio-wrapper">
               {interactionculturalgroups.length > 0 ? (
                 interactionculturalgroups.map((item, index) => (
@@ -340,7 +338,7 @@ function Sectionthree() {
               ) : (
                 <p>No data available</p>
               )}
-          </div>
+          </div> */}
 
         
     </div>

@@ -8,7 +8,7 @@ function MQ_Yellow() {
         <img src="/images/MQ_Yellow.png" alt="MQ Red Journey" />
       </div>
       <div className="MQ-content-container">
-        <h1>MQ Red: Beginning Your Cultural Journey</h1>
+        <h1>MQ Yellow: Beginning Your Cultural Journey</h1>
         <h3>You're Making Great Progress!</h3>
         <p>
         Think of MQ Yellow as being like an adventurous traveler – you've got your bearings, you're comfortable exploring, and you're ready to dive deeper. You're like someone who's learned enough cooking basics to start experimenting with fusion recipes!
@@ -44,9 +44,9 @@ function MQ_Yellow() {
     </div>
 
     <div className="common-container">
-  <h1 className="main-title">Development Tips for All Levels</h1>
+    
 
-  <section className="section">
+  {/* <section className="section">
     <h2 className="section-title">Daily Practice Ideas</h2>
     <table className="custom-table">
       <thead>
@@ -78,8 +78,8 @@ function MQ_Yellow() {
         </tr>
       </tbody>
     </table>
-  </section>
-
+  </section> */}
+{/* 
   <section className="section">
     <h2 className="section-title">Learning Resources</h2>
     <h3>Digital Learning</h3>
@@ -97,10 +97,10 @@ function MQ_Yellow() {
       <li>Cross-cultural project teams</li>
       <li>Cultural mentor programs</li>
     </ul>
-  </section>
+  </section> */}
 
   <section className="section">
-    <h2 className="section-title">Your Personal Development Journey</h2>
+    {/* <h2 className="section-title">Your Personal Development Journey</h2>
     <h3>Getting Started</h3>
     <ol className="custom-list numbered-list">
       <li>Take the MQ Assessment</li>
@@ -109,7 +109,7 @@ function MQ_Yellow() {
       <li>Create a personal development plan</li>
       <li>Track your progress regularly</li>
       <li>Celebrate your cultural learning wins</li>
-    </ol>
+    </ol> */}
 
     <h3>Tips for Success</h3>
     <ul className="custom-list">

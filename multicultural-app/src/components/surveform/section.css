@@ -83,3 +83,8 @@
   input[type="radio"] {
     appearance: auto; /* Ensure the browser's native radio button style is used */
   }
+  label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }

@@ -52,7 +52,7 @@ function SectionOne() {
       <div className='section-form'>
 
   {/* BirthYear question */}
-            <h3>What is your birth year ?</h3>
+            <h3>What is your birth year?</h3>
             <div className="select-wrapper">
             <select className='styled-select'   onChange={handlebornData}>
                 <option value="" disabled selected>
@@ -71,7 +71,7 @@ function SectionOne() {
             </div>
   {/* country of birth question */}
 
-            <h3>What is your country of birth ?</h3>
+            <h3>What is your country of birth?</h3>
 
             <div className="select-wrapper">
             <select className='styled-select'  onChange={handlecountryData}>
@@ -93,7 +93,7 @@ function SectionOne() {
 
 {/* country of recidence question */}
 
-            <h3>What is your current country of residence ?</h3>
+            <h3>What is your current country of residence?</h3>
 
             <div className="select-wrapper">
             <select className='styled-select'  onChange={handlecountryResidence}>
