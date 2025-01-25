@@ -3,6 +3,7 @@ import './survey.css';
 import Sectionone from './sectionone';
 import Sectiontwo from './sectiontwo';
 import Sectionthree from './sectionthree';
+import Sectionfour from './sectionfour';
 import { multiStepContext } from '../../StepContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ function Survey() {
   const navigate = useNavigate();
 
   const nextStep = () => {
-    if (currentStep < 3) {
+    if (currentStep < 4) {
       setCurrentStep(currentStep + 1); // Move to the next step
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
@@ -26,7 +27,7 @@ function Survey() {
   };
 
   // Progress bar calculation (percentage based on currentStep)
-  const progressPercentage = (currentStep / 3) * 100;
+  const progressPercentage = (currentStep / 4) * 100;
 
   const submitscore = () => {
     
@@ -43,6 +44,8 @@ function Survey() {
         <span className={currentStep === 1 ? 'active' : ''}>PROFILE</span>
         <span className={currentStep === 2 ? 'active' : ''}>KNOWLEDGE</span>
         <span className={currentStep === 3 ? 'active' : ''}>IMMERSION</span>
+        <span className={currentStep === 4 ? 'active' : ''}>DEMOGRAPHIC</span>
+
       </div>
 
       {/* Progress bar */}
@@ -57,6 +60,8 @@ function Survey() {
       {currentStep === 1 && <Sectionone />}
       {currentStep === 2 && <Sectiontwo />}
       {currentStep === 3 && <Sectionthree />}
+      {currentStep === 4 && <Sectionfour />}
+
 
       {/* Navigation buttons */}
       <div className="survey-navigation">
@@ -67,6 +72,9 @@ function Survey() {
           <button onClick={nextStep}>Next</button> // Show "Next" button if not on the last step
         )}
         {currentStep === 3 && (
+          <button onClick={nextStep}>Next</button> // Show "Submit" on last step
+        )}
+        {currentStep === 4 && (
           <button onClick={() => submitscore()}>Calculate score</button> // Show "Submit" on last step
         )}
       </div>
