@@ -141,8 +141,8 @@
   .survey-popup {
     /* position: fixed; */
    
-    width: 100%;
-    max-width: 60%;
+    width: 60%;
+  
     /* max-width: 600px;  */
     /* height: 450px;  */
     margin: 50px auto; 
@@ -291,11 +291,12 @@
       }
       .survey-popup{
         width: 100%;
+        box-sizing: border-box;
       }
 
-      .survey-popup-content{
-        max-width: 100%;
-      }
+      /* .survey-popup-content{
+        width: 100%;
+      } */
 
 
       .home-fourth-container{

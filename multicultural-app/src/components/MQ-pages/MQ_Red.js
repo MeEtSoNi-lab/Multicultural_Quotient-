@@ -48,9 +48,9 @@ function MQ_Red() {
 
 
     <div className="common-container">
-  <h1 className="main-title">Development Tips for All Levels</h1>
+    
 
-  <section className="section">
+  {/* <section className="section">
     <h2 className="section-title">Daily Practice Ideas</h2>
     <table className="custom-table">
       <thead>
@@ -82,8 +82,8 @@ function MQ_Red() {
         </tr>
       </tbody>
     </table>
-  </section>
-
+  </section> */}
+{/* 
   <section className="section">
     <h2 className="section-title">Learning Resources</h2>
     <h3>Digital Learning</h3>
@@ -101,10 +101,10 @@ function MQ_Red() {
       <li>Cross-cultural project teams</li>
       <li>Cultural mentor programs</li>
     </ul>
-  </section>
+  </section> */}
 
   <section className="section">
-    <h2 className="section-title">Your Personal Development Journey</h2>
+    {/* <h2 className="section-title">Your Personal Development Journey</h2>
     <h3>Getting Started</h3>
     <ol className="custom-list numbered-list">
       <li>Take the MQ Assessment</li>
@@ -113,7 +113,7 @@ function MQ_Red() {
       <li>Create a personal development plan</li>
       <li>Track your progress regularly</li>
       <li>Celebrate your cultural learning wins</li>
-    </ol>
+    </ol> */}
 
     <h3>Tips for Success</h3>
     <ul className="custom-list">

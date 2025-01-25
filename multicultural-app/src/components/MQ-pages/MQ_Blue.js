@@ -8,7 +8,7 @@ function MQ_Blue() {
         <img src="/images/MQ_Blue.png" alt="MQ Red Journey" />
       </div>
       <div className="MQ-content-container">
-        <h1>MQ Blue Cultural Navigation Master</h1>
+        <h1>MQ Blue: Cultural Navigation Master</h1>
         <h3>Congratulations on Reaching This Level!</h3>
         <p>
         Think of MQ Blue as being like a skilled cultural diplomat. You're like a master chef who can create beautiful fusion cuisines while respecting traditional recipes. You not only navigate different cultures with ease but help others do the same.        </p>

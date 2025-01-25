@@ -8,7 +8,7 @@ function MQ_Yellow() {
         <img src="/images/MQ_Yellow.png" alt="MQ Red Journey" />
       </div>
       <div className="MQ-content-container">
-        <h1>MQ Yellow: Beginning Your Cultural Journey</h1>
+        <h1>MQ Yellow: Building Cultural Bridges</h1>
         <h3>You're Making Great Progress!</h3>
         <p>
         Think of MQ Yellow as being like an adventurous traveler – you've got your bearings, you're comfortable exploring, and you're ready to dive deeper. You're like someone who's learned enough cooking basics to start experimenting with fusion recipes!
