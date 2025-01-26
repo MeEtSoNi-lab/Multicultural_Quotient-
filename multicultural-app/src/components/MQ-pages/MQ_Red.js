@@ -9,7 +9,7 @@ function MQ_Red() {
         <img src="/images/MQ_Red.png" alt="MQ Red Journey" />
       </div>
       <div className="MQ-content-container">
-        <h1>MQ Red: Beginning Your Cultural Journey</h1>
+        <h1 id='title'>MQ Red: Beginning Your Cultural Journey</h1>
         <h3>Welcome to Your Cultural Adventure!</h3>
         <p>
           Think of MQ Red as the starting line of an exciting journey. You're like someone who's just discovered a passion

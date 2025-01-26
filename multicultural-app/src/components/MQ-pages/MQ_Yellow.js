@@ -3,12 +3,14 @@ import './MQ.css'
 function MQ_Yellow() {
   return (
     <>
+   <div className='heading'>
+   <h1 id='title'>MQ Yellow: Building Cultural Bridges</h1>
+   </div>
    <div className="MQ-Main-container">
       <div className="MQ-Image-container">
         <img src="/images/MQ_Yellow.png" alt="MQ Red Journey" />
       </div>
       <div className="MQ-content-container">
-        <h1>MQ Yellow: Building Cultural Bridges</h1>
         <h3>You're Making Great Progress!</h3>
         <p>
         Think of MQ Yellow as being like an adventurous traveler – you've got your bearings, you're comfortable exploring, and you're ready to dive deeper. You're like someone who's learned enough cooking basics to start experimenting with fusion recipes!
