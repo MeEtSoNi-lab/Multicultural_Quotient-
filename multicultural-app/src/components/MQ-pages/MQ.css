@@ -78,6 +78,7 @@
   .common-container {
     width: 100%;
     margin: auto;
+    margin-top: -50px;
     padding: 20px 30px; /* Added horizontal padding for spacing */
     font-family: 'Arial', sans-serif;
     color: #333;
@@ -107,63 +108,10 @@
     color: #5cb85c; /* Matching green text for the section title */
   }
   
-  .custom-table {
-    width: 100%;
-    border-collapse: collapse; /* Ensures clean borders */
-    margin: 20px 0; /* Adds spacing around the table */
-    font-size: 1rem;
-    text-align: left;
-  }
-  
-  .custom-table th,
-  .custom-table td {
-    border: 1px solid #ddd; /* Adds clear borders */
-    padding: 12px 15px; /* Adds comfortable spacing */
-  }
-  
-  .custom-table th {
-    background-color: #5bc0de; /* Light cyan for the header */
-    color: #ffffff; /* White text for headers */
-    text-transform: uppercase; /* Makes headers standout */
-    font-weight: bold;
-  }
-  
-  .custom-table tr:nth-child(even) {
-    background-color: #fdf2e9; /* Light orange for alternating rows */
-  }
-  
-  .custom-table tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Light gray for alternating rows */
-  }
-  
-  .custom-table tr:hover {
-    background-color: #e9f7f9; /* Soft cyan for hover effect */
-  }
-  
-  .custom-table td {
-    color: #333; /* Text color for table cells */
-  }
-  
-  .custom-table th:first-child,
-  .custom-table td:first-child {
-    border-left: 2px solid #5cb85c; /* Green left border for alignment */
-  }
-  
-  .custom-table th:last-child,
-  .custom-table td:last-child {
-    border-right: 2px solid #d9534f; /* Red right border for emphasis */
-  }
-  
-  .custom-table th {
-    border-top: 2px solid #5cb85c; /* Green top border for the header */
-  }
-  
-  .custom-table tr:last-child td {
-    border-bottom: 2px solid #d9534f; /* Red bottom border for the last row */
-  }
   
   .custom-list {
     padding-left: 20px;
+    margin-top: 20px;
     margin-bottom: 30px; /* Increased spacing for lists */
   }
   
@@ -206,7 +154,11 @@
     .MQ-content-container {
       max-width: 90%;
     }
-
+    
+    section{
+        width: 90%;
+        margin: auto;
+    }
   
   }
   
