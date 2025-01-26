@@ -4,7 +4,7 @@ function MQ_Blue() {
   return (
     <>
     <div className='heading'>
-   <h1 id='title'>MQ Yellow: Building Cultural Bridges</h1>
+   <h1 id='title'>MQ Blue: Cultural Navigation Master</h1>
    </div>
     <div className="MQ-Main-container">
       <div className="MQ-Image-container">
