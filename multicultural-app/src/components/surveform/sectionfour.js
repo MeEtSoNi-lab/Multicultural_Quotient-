@@ -119,8 +119,9 @@ function Sectionfour() {
           <p>Note that although this list is not exhaustive, we have included a wide variety of identities to be as inclusive as possible. We have provided options to enter other identities under “another” below if you do not see your identity listed. </p>
 
          
+          <div className='check-box-container'>
           <h4>MULTI-CULTURAL</h4> 
-          <div>
+          <div >
             {multicultural.map((option, index) => (
               <div key={index} style={{ marginBottom: "10px" }}>
                 <label>
@@ -218,6 +219,7 @@ function Sectionfour() {
                 </label>
               </div>
             ))}
+          </div>
           </div>
         </div>
     </>

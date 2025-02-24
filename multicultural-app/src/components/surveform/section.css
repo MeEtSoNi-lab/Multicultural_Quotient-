@@ -1,5 +1,6 @@
 .section-form{
     width: 100%;
+    
 }
 
 .section-form{
@@ -11,6 +12,18 @@
     margin-top: 10px;
 }
 
+.section-form h3{
+  color: #aaa
+}
+
+.section-form h4{
+  color: #aaa
+}
+
+.section-form P{
+  color: #aaa
+
+}
 .section-form .styled-select{
     width: 100%;
     padding: 10px 15px;
@@ -18,7 +31,7 @@
     font-family: 'Arial', sans-serif;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background: white;
+    background: rgba(255, 255, 255, 0.144);
     appearance: none;
     outline: none;
     cursor: pointer;
@@ -72,6 +85,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: #BABEC2;
+
   }
   
   .radio-item {
@@ -87,4 +102,17 @@
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  .section-form .check-box-container{
+    color: #aaa;
+  }
+
+  .check-box-container h4{
+    margin-bottom: 20px;
+
+  }
+
+  div{
+    margin-bottom: 20px;
   }
