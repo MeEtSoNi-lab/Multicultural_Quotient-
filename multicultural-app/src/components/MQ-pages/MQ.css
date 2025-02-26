@@ -1,6 +1,6 @@
 /* MQ.css */
 .heading{
-  color: #BABEC2;
+  color: #F3785A;
 
 }
 .MQ-Main-container {
@@ -61,7 +61,7 @@
   
   .MQ-content-container h3 {
     font-size: 1.5rem;
-    color: #aaa;
+    color: #32b560;
 
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
@@ -97,6 +97,10 @@
     border-radius: 10px; /* Rounded corners for a modern feel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
     box-sizing: border-box;
+  }
+
+  .common-container h3{
+    color: #32b560;
   }
   
   .main-title {
@@ -141,11 +145,12 @@
   }
   
   .highlight-text {
-    background-color: #fef7e3; /* Light yellow for highlight background */
+    background-color: #9e8eab1a; /* Light yellow for highlight background */
     border-left: 4px solid #f0ad4e; /* Orange border for emphasis */
     padding: 15px; /* Added padding for better emphasis */
     font-style: italic;
     margin-bottom: 20px; /* Added spacing below highlight text */
+    color: #f6cc0f;
   }
   
 
@@ -169,6 +174,8 @@
         width: 90%;
         margin: auto;
     }
+    
+    
   
   }
   
