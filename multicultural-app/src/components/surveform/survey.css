@@ -17,7 +17,8 @@
   .step-indicator span {
     font-size: 16px;
     font-weight: bold;
-    color: #aaa;
+    color: #78489c;
+
   }
   
   .step-indicator span.active {
@@ -61,10 +62,10 @@
   
   @media screen and (max-width: 768px) {
      
-  .step-indicator span {
+  .step-indicator span{
     font-size: 9px;
     font-weight: bold;
-    color: #aaa;
+    color: #78489c;
   }
   
   }
