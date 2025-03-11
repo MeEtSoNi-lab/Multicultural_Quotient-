@@ -7,6 +7,7 @@ import Results from './components/results/results';
 import Header from './components/header/Header';
 import { multiStepContext } from './StepContext';
 import React from 'react';
+import emailjs from "emailjs-com";
 
 function App() {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -20,14 +21,31 @@ function App() {
     message: '',
   });
 
-  const submitData = () => {
-    console.log(formData.name, formData.email, formData.message);
-
-    const data = {
-      Name: formData.name,
-      Email: formData.email,
-      Message: formData.message,
-    };
+  const submitData = (e) => {
+    e.preventDefault(); // Prevent page reload
+  
+    emailjs
+      .send(
+        "service_4af2rwn", // Replace with your EmailJS Service ID
+        "meet_soni", // Replace with your EmailJS Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "QCOxsV2vFpIuaiirS" // Replace with your EmailJS Public Key
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully!");
+          setformData({ name: "", email: "", message: "" }); // Clear form
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          alert("Failed to send message. Try again.");
+        }
+      );
   };
 
   const disableForm = () => {

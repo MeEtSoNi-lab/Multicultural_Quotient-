@@ -7,9 +7,7 @@ function MQ_Blue() {
    <h1 id='title'>MQ Blue: Cultural Navigation Master</h1>
    </div>
     <div className="MQ-Main-container">
-      <div className="MQ-Image-container">
-        <img src="/images/MQ_Blue.png" alt="MQ Red Journey" />
-      </div>
+      
       <div className="MQ-content-container">
         <h3>Congratulations on Reaching This Level!</h3>
         <p>
@@ -42,13 +40,21 @@ function MQ_Blue() {
           <li>Create platforms for cultural exchange</li>
         </ul>
       </div>
+      <div className="MQ-Image-container">
+        <img src="/images/MQ_Blue.png" alt="MQ Red Journey" />
+      </div>
     </div>
 
     <div className="common-container">
       <section className="section">
 
         <h3>Tips for Success</h3>
-        <ul className="custom-list">
+        <div className='secondImagebox'>
+    <div className='seconImagebox-image'>
+            <img src="/images/MQ-BLUE-MEN.png" alt="" />
+          </div>
+          <div className='seconImagebox-image-content'>
+          <ul className="custom-list">
           <li>Stay curious and open-minded</li>
           <li>Embrace learning opportunities</li>
           <li>Connect with others on similar journeys</li>
@@ -56,7 +62,14 @@ function MQ_Blue() {
           <li>Share your learnings with others</li>
           <li>Be patient with your progress</li>
         </ul>
+          </div>
+          
+    </div>
 
+       
+        <div className='conclusion-image'>
+         <img src="/images/Multicultural-ALL-IN-ONE.png" alt="" />
+       </div>
         <h3 className="highlight">Remember</h3>
         <p className="highlight-text">
           Building a Multicultural Mindset is a journey, not a destination. Every interaction is an opportunity to learn and grow, regardless of your current MQ level.

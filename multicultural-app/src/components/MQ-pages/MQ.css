@@ -1,187 +1,247 @@
-/* MQ.css */
-.heading{
+/* General Styling */
+.heading {
   color: #F3785A;
-
+  text-align: center;
 }
+
+
+h3 {
+  font-size: 1.8rem; /* Increased heading size */
+  font-weight: bold;
+  color: #32b560;
+}
+
+p {
+  font-size: 1.1rem; /* Increased paragraph size */
+  color: #BABEC2;
+  line-height: 1.8; /* Better readability */
+}
+
+/* Main Container */
 .MQ-Main-container {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #242A31;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #242A31;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  color: #BABEC2;
+  font-family: 'Arial', sans-serif;
+  gap: 2rem;
+  box-sizing: border-box;
+}
 
-    justify-content: space-between;
-    align-items: center; /* Vertically center-aligns the image and content */
-    padding: 2rem;
-    color: #BABEC2;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    gap: 2rem;
-    box-sizing: border-box;
-    
+/* Image Container */
+.MQ-Image-container {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  order: 0;
+}
+
+.MQ-Image-container img {
+  width: 100%;
+  height: auto;
+  animation: rotateImage 10s linear infinite;
+}
+
+/* Image Rotation Animation */
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .MQ-Image-container {
-    flex: 1; /* Adjusts to share space with content */
-    max-width: 50%; /* Restricts image container size */
-    display: flex;
-    justify-content: center; /* Centers the image horizontally */
-    order: 0;
-    
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .MQ-Image-container img {
-    width: 100%;
-    height: auto;
-    animation: rotateImage 10s linear infinite; /* Applies the rotation animation */
+}
+
+/* Content Container */
+.MQ-content-container {
+  flex: 2;
+  max-width: 50%;
+  padding: 1.5rem;
+}
+
+.MQ-content-container h3 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.MQ-content-container p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.MQ-content-container ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.MQ-content-container ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Common Container */
+.common-container {
+  width: 100%;
+  margin: auto;
+  margin-top: -50px;
+  padding: 25px 35px;
+  font-family: 'Arial', sans-serif;
+  color: #aaa;
+  background-color: #242A31;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.common-container h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Titles */
+.main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #d9534f;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #5cb85c;
+  padding-left: 18px;
+  color: #5cb85c;
+}
+
+/* Lists */
+.custom-list {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.custom-list li {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.numbered-list {
+  list-style: decimal;
+  margin-left: 20px;
+}
+
+
+.highlight {
+  font-size: 1.6rem;
+  color: #f0ad4e;
+  margin-bottom: 15px;
+}
+
+.highlight-text {
+  background-color: rgba(158, 142, 171, 0.1);
+  border-left: 5px solid #f0ad4e;
+  padding: 15px;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #f6cc0f;
+}
+
+/* Image Box */
+.secondImagebox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.seconImagebox-image-content {
+  width: 30%;
+}
+
+.seconImagebox-image-content ul {
+  width: 100%;
+  margin-left: auto;
+}
+
+.seconImagebox-image {
+  text-align: center;
+  width: 60%;
+}
+
+.seconImagebox-image img {
+  width: 1000px;
+  height: 900px;
+  max-width: 100%;
+}
+
+.conclusion-image img{
+  width: 100%;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .MQ-Main-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  
-  
-  @keyframes rotateImage {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  .MQ-Image-container, .MQ-content-container {
+    max-width: 80%;
   }
-  
-  .MQ-content-container {
-    flex: 2; /* Takes more space than the image */
-    max-width: 50%; /* Restricts content container size */
-    padding: 1.5rem;
-  }
-  
-  .heading h1 {
-    font-size: 2rem;
-    width: 100%;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    text-align: center;
-  }
-  
-  .MQ-content-container h3 {
-    font-size: 1.5rem;
-    color: #32b560;
 
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .MQ-content-container p {
-    font-size: 1rem;
-    color: #BABEC2;
-
-    margin-bottom: 1rem;
-  }
-  
-  .MQ-content-container ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    list-style: disc;
-  }
-  
-  .MQ-content-container ul li {
-    margin-bottom: 0.5rem;
-  }
-  
   .common-container {
-    width: 100%;
-    margin: auto;
-    margin-top: -50px;
-    padding: 20px 30px; /* Added horizontal padding for spacing */
-    font-family: 'Arial', sans-serif;
-    color: #aaa;
-    line-height: 1.8; /* Increased line-height for better readability */
-    /* background-color: #ffffff;  */
-    background-color: #242A31;
-    border-radius: 10px; /* Rounded corners for a modern feel */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
-    box-sizing: border-box;
+    padding: 20px;
   }
 
-  .common-container h3{
-    color: #32b560;
-  }
-  
-  .main-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 25px; /* Added spacing below the title */
-    color: #d9534f; /* Warm red-orange for the title */
-  }
-  
-  .section {
-    margin-bottom: 50px; /* Increased spacing between sections */
-  }
-  
   .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px; /* Added more space below the section title */
-    border-left: 4px solid #5cb85c; /* Green for section title border */
-    padding-left: 15px; /* Increased padding for better alignment */
-    color: #5cb85c; /* Matching green text for the section title */
+    font-size: 1.7rem;
   }
-  
-  
-  .custom-list {
-    padding-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px; /* Increased spacing for lists */
-  }
-  
-  .custom-list li {
-    margin-bottom: 15px; /* Added space between list items */
-  }
-  
-  .numbered-list {
-    list-style: decimal;
-    margin-left: 20px; /* Proper indentation for numbered lists */
-  }
-  
-  .highlight {
-    font-size: 1.4rem;
-    color: #f0ad4e; /* Warm orange for highlight text */
-    margin-bottom: 15px; /* Added spacing below highlight title */
-  }
-  
-  .highlight-text {
-    background-color: #9e8eab1a; /* Light yellow for highlight background */
-    border-left: 4px solid #f0ad4e; /* Orange border for emphasis */
-    padding: 15px; /* Added padding for better emphasis */
-    font-style: italic;
-    margin-bottom: 20px; /* Added spacing below highlight text */
-    color: #f6cc0f;
-  }
-  
+}
 
-
-  @media (max-width: 768px) {
-    .MQ-Main-container {
-      flex-direction: column;
-      align-items: center;
-    }
-   
-  
-    .MQ-Image-container{
-      max-width: 90%;
-  
-    }
-    .MQ-content-container {
-      max-width: 90%;
-    }
-    
-    section{
-        width: 90%;
-        margin: auto;
-    }
-    
-    
-  
+@media (max-width: 768px) {
+  .MQ-Main-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
 
-  @media (max-width: 480px) {
-    #title{
-        order: 2;
-    }
+  .MQ-Image-container, .MQ-content-container {
+    max-width: 90%;
+  }
+
+  .common-container {
+    width: 90%;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #title {
+    order: 2;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .common-container {
+    padding: 15px;
+  }
 }
