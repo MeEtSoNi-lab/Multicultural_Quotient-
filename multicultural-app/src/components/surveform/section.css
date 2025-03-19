@@ -109,7 +109,7 @@
   .section-form .check-box-container{
     color: #aaa;
   }
-
+ 
   .check-box-container h4{
     margin-bottom: 20px;
 
@@ -117,4 +117,8 @@
 
   div{
     margin-bottom: 20px;
+  }
+
+  .third-form-h3 h3{
+    color: #aaa;
   }

@@ -89,11 +89,15 @@ function Sectionthree() {
   return (
     <div className='section-form'>
     <div className='section-form'>
-          <h3> To what extent do you agree or disagree with the following statements?</h3>
-
-          <h4> Multiculturalism can sometimes mean valuing and coexistence of people from diverse ethnic and cultural backgrounds. 
+      <div className='third-form-h3'>
+         <h3> To what extent do you agree or disagree with the following statements?</h3>
+      </div>
+         
+      <div className='third-form-radio-button'>
+        
+      <h3> Multiculturalism can sometimes mean valuing and coexistence of people from diverse ethnic and cultural backgrounds. 
                 To what extent do you believe that multiculturalism benefits… 
-          </h4>
+          </h3>
 
           <div className="radio-wrapper">
                 {multiculturalismbenefits.length > 0 ? (
@@ -120,7 +124,7 @@ function Sectionthree() {
           
 
 
-          <h4>I celebrate holiday traditions relating to my ethnic/cultural background</h4>
+          <h3>I celebrate holiday traditions relating to my ethnic/cultural background</h3>
             <div className="radio-wrapper">
                 {disagreestatements.length > 0 ? (
                   disagreestatements.map((item, index) => (
@@ -143,7 +147,7 @@ function Sectionthree() {
                   <p>No data available</p>
                 )}
             </div>
-          <h4>I participate in traditions relating to cultures other than my own</h4>
+          <h3>I participate in traditions relating to cultures other than my own</h3>
             <div className="radio-wrapper">
                 {disagreestatements.length > 0 ? (
                   disagreestatements.map((item, index) => (
@@ -164,7 +168,7 @@ function Sectionthree() {
                   <p>No data available</p>
                 )}
             </div>
-          <h4>I think holidays from cultures other than my own should be celebrated freely</h4>
+          <h3>I think holidays from cultures other than my own should be celebrated freely</h3>
             <div className="radio-wrapper">
                 {disagreestatements.length > 0 ? (
                   disagreestatements.map((item, index) => (
@@ -185,7 +189,7 @@ function Sectionthree() {
                   <p>No data available</p>
                 )}
             </div>
-          <h4>I have experienced the traditions and/or attended multicultural festivals and events where I live </h4>
+          <h3>I have experienced the traditions and/or attended multicultural festivals and events where I live </h3>
             <div className="radio-wrapper">
                 {disagreestatements.length > 0 ? (
                   disagreestatements.map((item, index) => (
@@ -206,7 +210,7 @@ function Sectionthree() {
                   <p>No data available</p>
                 )}
             </div>
-          <h4>I feel comfortable expressing my cultural identity while also feeling I am a part of society</h4>
+          <h3>I feel comfortable expressing my cultural identity while also feeling I am a part of society</h3>
             <div className="radio-wrapper">
                 {disagreestatements.length > 0 ? (
                   disagreestatements.map((item, index) => (
@@ -230,7 +234,7 @@ function Sectionthree() {
 
 
 
-          <h4> Multiculturalism keeps different ethnic groups too segregated in society </h4>
+          <h3> Multiculturalism keeps different ethnic groups too segregated in society </h3>
           <div className="radio-wrapper">
                 {negativestatementscale.length > 0 ? (
                   negativestatementscale.map((item, index) => (
@@ -255,7 +259,7 @@ function Sectionthree() {
           
 
 
-          <h4> Which of the following best describes your interactions with people from other ethnic/cultural groups?</h4>
+          <h3> Which of the following best describes your interactions with people from other ethnic/cultural groups?</h3>
             <div className="radio-wrapper">
                 {interactionculturalgroups.length > 0 ? (
                   interactionculturalgroups.map((item, index) => (
@@ -276,7 +280,9 @@ function Sectionthree() {
                   <p>No data available</p>
                 )}
             </div>
-          {/* <h4>I work/interact with people from other cultures/ethnicities regularly, but mostly in passing or casual settings</h4>
+      </div>
+
+          {/* <h3>I work/interact with people from other cultures/ethnicities regularly, but mostly in passing or casual settings</h3>
             <div className="radio-wrapper">
                 {interactionculturalgroups.length > 0 ? (
                   interactionculturalgroups.map((item, index) => (
@@ -297,7 +303,7 @@ function Sectionthree() {
                   <p>No data available</p>
                 )}
             </div>
-          <h4>I have limited interactions with people from cultures/ethnicities different than my own</h4>
+          <h3>I have limited interactions with people from cultures/ethnicities different than my own</h3>
             <div className="radio-wrapper">
                 {interactionculturalgroups.length > 0 ? (
                   interactionculturalgroups.map((item, index) => (
@@ -318,7 +324,7 @@ function Sectionthree() {
                   <p>No data available</p>
                 )}
             </div> */}
-          {/* <h4>I rarely, if ever, interact with people from other cultures/ethnicities </h4>
+          {/* <h3>I rarely, if ever, interact with people from other cultures/ethnicities </h3>
           <div className="radio-wrapper">
               {interactionculturalgroups.length > 0 ? (
                 interactionculturalgroups.map((item, index) => (
