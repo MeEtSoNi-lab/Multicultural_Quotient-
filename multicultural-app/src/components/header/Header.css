@@ -73,11 +73,13 @@
 .home-red-content-info,
 .home-yellow-content-info,
 .home-blue-content-info {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  margin: auto;
 }
 
 .home-red-content h1,
@@ -167,7 +169,8 @@
   .home-red-content-info,
   .home-yellow-content-info,
   .home-blue-content-info {
-    width: 100%;
+    width: 50%;
+    margin: auto;
   }
 
   .home-red-content h1,
