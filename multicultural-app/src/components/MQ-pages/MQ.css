@@ -4,17 +4,16 @@
   text-align: center;
 }
 
-
 h3 {
-  font-size: 1.8rem; /* Increased heading size */
+  font-size: 1.8rem;
   font-weight: bold;
   color: #32b560;
 }
 
 p {
-  font-size: 1.1rem; /* Increased paragraph size */
+  font-size: 1.1rem;
   color: #BABEC2;
-  line-height: 1.8; /* Better readability */
+  line-height: 1.8;
 }
 
 /* Main Container */
@@ -22,7 +21,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   background-color: #242A31;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
   color: #BABEC2;
@@ -34,7 +33,7 @@ p {
 /* Image Container */
 .MQ-Image-container {
   flex: 1;
-  max-width: 50%;
+  max-width: 45%;
   display: flex;
   justify-content: center;
   order: 0;
@@ -43,6 +42,7 @@ p {
 .MQ-Image-container img {
   width: 100%;
   height: auto;
+  max-width: 100%;
   animation: rotateImage 10s linear infinite;
 }
 
@@ -58,7 +58,7 @@ p {
 
 /* Content Container */
 .MQ-content-container {
-  flex: 2;
+  flex: 1;
   max-width: 50%;
   padding: 1.5rem;
 }
@@ -88,9 +88,10 @@ p {
 /* Common Container */
 .common-container {
   width: 100%;
+  max-width: 1200px;
   margin: auto;
   margin-top: -50px;
-  padding: 25px 35px;
+  padding: 25px;
   font-family: 'Arial', sans-serif;
   color: #aaa;
   background-color: #242A31;
@@ -141,20 +142,19 @@ p {
   margin-left: 20px;
 }
 
-
 .highlight {
   font-size: 1.6rem;
-  color: #f0ad4e;
+  color: #FFFFFF;
   margin-bottom: 15px;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .highlight-text {
-  background-color: rgba(158, 142, 171, 0.1);
-  border-left: 5px solid #f0ad4e;
+  background-color: #37474F;
   padding: 15px;
-  font-style: italic;
   margin-bottom: 20px;
-  color: #f6cc0f;
+  color: #FFFFFF;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* Image Box */
@@ -163,23 +163,26 @@ p {
   width: 90%;
   background-color: #373C42;
   border-radius: 30px;
-  padding-top: 50px;
+  padding: 50px 20px;
   color: #ffffff;
-  
+  text-align: center;
 }
 
-.tip-success-box h3{
+.tip-success-box h3 {
   color: #ffffff;
 }
+
 .secondImagebox {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 
-
 .seconImagebox-image-content {
-  width: 30%;
+  width: 100%;
+  max-width: 30%;
+  text-align: center;
 }
 
 .seconImagebox-image-content ul {
@@ -189,18 +192,17 @@ p {
 
 .seconImagebox-image {
   text-align: center;
-  width: 60%;
+  width: 100%;
+  max-width: 60%;
 }
 
 .seconImagebox-image img {
-  
   max-width: 100%;
 }
 
-.conclusion-image img{
+.conclusion-image img {
   width: 100%;
 }
-
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -210,7 +212,8 @@ p {
   }
 
   .MQ-Image-container, .MQ-content-container {
-    max-width: 80%;
+    max-width: 100%;
+    text-align: center;
   }
 
   .common-container {
@@ -229,11 +232,16 @@ p {
   }
 
   .MQ-Image-container, .MQ-content-container {
-    max-width: 90%;
+    max-width: 100%;
+    /* text-align: center; */
   }
 
   .common-container {
     width: 90%;
+  }
+
+  .tip-success-box {
+    padding: 30px;
   }
 
   .section-title {
@@ -256,5 +264,28 @@ p {
 
   .common-container {
     padding: 15px;
+    width: 95%;
+  }
+
+  .MQ-Image-container img {
+    width: 80%;
+  }
+
+  .MQ-content-container {
+    padding: 1rem;
+  }
+
+  .tip-success-box {
+    padding: 20px;
+  }
+
+  .secondImagebox {
+    flex-direction: column;
+  }
+
+  .seconImagebox-image-content, .seconImagebox-image {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
   }
 }
