@@ -47,14 +47,19 @@
   }
   /* Navigation buttons */
   .survey-navigation button {
-    margin: 10px;
+    width: 325px;
+    height: 45px;
     padding: 10px 20px;
-    background-color: #32b560;
-    color: white;
+    margin: 10px;
+    background-color: #FFFFFF;
+    color: #242A31; /* Fixed missing # */
     border: none;
-    border-radius: 5px;
-   
-  }
+    border-radius: 50px;
+    font-size: 20px; /* Adjust as needed */
+    font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+    font-weight: 400; /* Adjust weight if needed */
+}
+
   
   .survey-navigation button:hover {
     background-color: #e63946;

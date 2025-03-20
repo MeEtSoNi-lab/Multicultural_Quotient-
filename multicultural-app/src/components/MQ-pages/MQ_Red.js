@@ -57,23 +57,25 @@ function MQ_Red() {
 
   <section className="section">
    
-    <h3>Tips for Success</h3>
+    <div className='tip-success-box'>
+        <h3>Tips for Success</h3>
 
-    <div className='secondImagebox'>
-    <div className='seconImagebox-image'>
-            <img src="/images/MQ-RED-MEN.png" alt="" />
-          </div>
-          <div className='seconImagebox-image-content'>
-              <ul className="custom-list">
-                <li>Stay curious and open-minded</li>
-                <li>Embrace learning opportunities</li>
-                <li>Connect with others on similar journeys</li>
-                <li>Document your experiences</li>
-                <li>Share your learnings with others</li>
-                <li>Be patient with your progress</li>
-              </ul>
-          </div>
-          
+        <div className='secondImagebox'>
+        <div className='seconImagebox-image'>
+                <img src="/images/MQ-RED-MEN.png" alt="" />
+              </div>
+              <div className='seconImagebox-image-content'>
+                  <ul className="custom-list">
+                    <li>Stay curious and open-minded</li>
+                    <li>Embrace learning opportunities</li>
+                    <li>Connect with others on similar journeys</li>
+                    <li>Document your experiences</li>
+                    <li>Share your learnings with others</li>
+                    <li>Be patient with your progress</li>
+                  </ul>
+              </div>
+              
+        </div>
     </div>
   
     <div className='conclusion-image'>

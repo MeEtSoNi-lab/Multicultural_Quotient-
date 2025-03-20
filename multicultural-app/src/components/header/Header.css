@@ -42,6 +42,182 @@
   margin: 0; /* Remove margins for proper centering */
 }
 
+/* design for the red container  */
+
+.home-red-container {
+  padding-top: 10px;
+  position: relative;
+  height: 400px;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: center; /* Vertically centers the content */
+  /* align-items: center;  */
+ background-color: #EA4D3F;
+}
+.home-red-content {
+  width: 50%;
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%; /* Takes full height of the parent container */
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-weight: 400;
+ 
+}
+
+.home-red-content-info{
+  width: 50%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center; /* Ensures text is vertically centered within its parent */
+  gap: 20px;
+}
+.home-red-content p{
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 20px ;
+  font-weight: 200;
+}
+.home-red-content h1{
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 105px ;
+}
+
+.home-red-content h4{
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 30px ;
+}
+
+.home-red-image{
+  width: 50%;
+  text-align: center;
+}
+
+.home-red-image img{
+  width: 400px;
+  height: 400px;
+}
+
+
+/* design for yellow header  */
+
+.home-yellow-container {
+  padding-top: 10px;
+  position: relative;
+  height: 400px;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: center; /* Vertically centers the content */
+  /* align-items: center;  */
+ background-color: #F7CE0B;
+}
+.home-yellow-content {
+  width: 50%;
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%; /* Takes full height of the parent container */
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-weight: 400;
+ 
+}
+
+.home-yellow-content-info{
+  width: 50%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center; /* Ensures text is vertically centered within its parent */
+  gap: 20px;
+}
+.home-yellow-content p{
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 20px ;
+  font-weight: 200;
+}
+.home-yellow-content h1{
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 105px ;
+}
+
+.home-yellow-content h4{
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 30px ;
+}
+
+.home-yellow-image{
+  width: 50%;
+  text-align: center;
+}
+
+.home-yellow-image img{
+  width: 400px;
+  height: 400px;
+}
+
+
+/* design for blue container */
+
+.home-blue-container {
+  padding-top: 10px;
+  position: relative;
+  height: 400px;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: center; /* Vertically centers the content */
+  /* align-items: center;  */
+ background-color: #2F8FCC;
+}
+.home-blue-content {
+  width: 50%;
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%; /* Takes full height of the parent container */
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-weight: 400;
+ 
+}
+
+.home-blue-content-info{
+  width: 50%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center; /* Ensures text is vertically centered within its parent */
+  gap: 20px;
+}
+.home-blue-content p{
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 20px ;
+  font-weight: 200;
+}
+.home-blue-content h1{
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 105px ;
+}
+
+.home-blue-content h4{
+  font-family: "Plus Jakarta Sans", sans-serif; /* Apply the font */
+  font-size: 30px ;
+}
+
+.home-blue-image{
+  width: 50%;
+  text-align: center;
+}
+
+.home-blue-image img{
+  width: 400px;
+  height: 400px;
+}
+
 @media screen and (max-width: 768px) {
   .home-content {
       width: 70%; /* Adjust content width */
@@ -50,6 +226,12 @@
   .home-content h1 {
       font-size: 50px; /* Smaller font size */
   }
+
+  .home-red-content {
+    width: 70%; /* Adjust content width */
+}
+
+ 
 }
 
 @media screen and (max-width: 480px) {
@@ -65,4 +247,9 @@
       font-size: 36px; /* Smaller font size */
       line-height: 1.3;
   }
+
+  .home-red-content {
+    width: 90%; /* Full-width on small screens */
+}
+ 
 }

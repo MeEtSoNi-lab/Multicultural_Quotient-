@@ -158,11 +158,25 @@ p {
 }
 
 /* Image Box */
+.tip-success-box {
+  margin: auto;
+  width: 90%;
+  background-color: #373C42;
+  border-radius: 30px;
+  padding-top: 50px;
+  color: #ffffff;
+  
+}
+
+.tip-success-box h3{
+  color: #ffffff;
+}
 .secondImagebox {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
+
 
 .seconImagebox-image-content {
   width: 30%;
@@ -179,8 +193,7 @@ p {
 }
 
 .seconImagebox-image img {
-  width: 1000px;
-  height: 900px;
+  
   max-width: 100%;
 }
 
