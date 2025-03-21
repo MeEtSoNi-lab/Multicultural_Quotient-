@@ -47,6 +47,7 @@
 .home-yellow-container,
 .home-blue-container {
   padding-top: 10px;
+  padding-left: 60px;
   position: relative;
   height: 400px;
   display: flex;
@@ -78,8 +79,6 @@
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-
-  margin: auto;
 }
 
 .home-red-content h1,

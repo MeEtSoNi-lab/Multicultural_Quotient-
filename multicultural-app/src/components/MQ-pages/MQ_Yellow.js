@@ -3,7 +3,8 @@ import './MQ.css'
 function MQ_Yellow() {
   return (
     <>
-   <div className='heading'>
+    <div className='MQ-MAIN'>
+    <div className='heading'>
    <h1 id='title'>MQ Yellow: Building Cultural Bridges</h1>
    </div>
    <div className="MQ-Main-container">
@@ -47,92 +48,44 @@ function MQ_Yellow() {
     </div>
 
     <div className="common-container">
-    
+  
 
-  {/* <section className="section">
-    <h2 className="section-title">Daily Practice Ideas</h2>
-    <table className="custom-table">
-      <thead>
-        <tr>
-          <th>Level</th>
-          <th>Quick Wins</th>
-          <th>Weekly Goals</th>
-          <th>Monthly Challenges</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Red</td>
-          <td>Try a new cultural food</td>
-          <td>Watch an international film</td>
-          <td>Attend a cultural festival</td>
-        </tr>
-        <tr>
-          <td>Yellow</td>
-          <td>Have lunch with someone from a different culture</td>
-          <td>Lead a cultural discussion</td>
-          <td>Organize a cultural event</td>
-        </tr>
-        <tr>
-          <td>Blue</td>
-          <td>Mentor someone from another culture</td>
-          <td>Write a cultural insight piece</td>
-          <td>Design a cultural training program</td>
-        </tr>
-      </tbody>
-    </table>
-  </section> */}
-{/* 
-  <section className="section">
-    <h2 className="section-title">Learning Resources</h2>
-    <h3>Digital Learning</h3>
-    <ul className="custom-list">
-      <li>Online cultural intelligence courses</li>
-      <li>Cultural podcasts and webinars</li>
-      <li>Virtual cultural exchange programs</li>
-      <li>Global networking platforms</li>
-    </ul>
+        <section className="section">
 
-    <h3>Practical Experience</h3>
-    <ul className="custom-list">
-      <li>Cultural immersion programs</li>
-      <li>International volunteering</li>
-      <li>Cross-cultural project teams</li>
-      <li>Cultural mentor programs</li>
-    </ul>
-  </section> */}
+         <div className='tip-success-box'>
 
-  <section className="section">
-
-    <h3>Tips for Success</h3>
-    
-    <div className='secondImagebox'>
-    <div className='seconImagebox-image'>
-            <img src="/images/MQ-YELLOW-MEN.png" alt="" />
+         <h3>Tips for Success</h3>
+          
+          <div className='secondImagebox'>
+          <div className='seconImagebox-image'>
+                  <img src="/images/MQ-YELLOW-MEN.png" alt="" />
           </div>
-          <div className='seconImagebox-image-content'>
-          <ul className="custom-list">
-      <li>Stay curious and open-minded</li>
-      <li>Embrace learning opportunities</li>
-      <li>Connect with others on similar journeys</li>
-      <li>Document your experiences</li>
-      <li>Share your learnings with others</li>
-      <li>Be patient with your progress</li>
-    </ul>
+                <div className='seconImagebox-image-content'>
+                <ul className="custom-list">
+            <li>Stay curious and open-minded</li>
+            <li>Embrace learning opportunities</li>
+            <li>Connect with others on similar journeys</li>
+            <li>Document your experiences</li>
+            <li>Share your learnings with others</li>
+            <li>Be patient with your progress</li>
+          </ul>
+                </div>
+                
+          </div>
           </div>
           
+          <div className='conclusion-image'>
+          <img src="/images/Multicultural-ALL-IN-ONE.png" alt="" />
+          </div>
+          <h3 className="highlight">Remember</h3>
+          <p className="highlight-text">
+            Building a Multicultural Mindset is a journey, not a destination. Every interaction is an opportunity to learn and grow, regardless of your current MQ level.
+          </p>
+         
+        </section>
     </div>
-
-    
-    <div className='conclusion-image'>
-    <img src="/images/Multicultural-ALL-IN-ONE.png" alt="" />
     </div>
-    <h3 className="highlight">Remember</h3>
-    <p className="highlight-text">
-      Building a Multicultural Mindset is a journey, not a destination. Every interaction is an opportunity to learn and grow, regardless of your current MQ level.
-    </p>
-  </section>
-    </div>
+   
     </>
   )
 }

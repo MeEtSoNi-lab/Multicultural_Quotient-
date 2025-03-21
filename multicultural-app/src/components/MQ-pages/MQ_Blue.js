@@ -3,6 +3,7 @@ import React from 'react'
 function MQ_Blue() {
   return (
     <>
+    <div className='MQ-MAIN'>
     <div className='heading'>
    <h1 id='title'>MQ Blue: Cultural Navigation Master</h1>
    </div>
@@ -47,7 +48,8 @@ function MQ_Blue() {
 
     <div className="common-container">
       <section className="section">
-
+          <div className='tip-success-box'>
+            
         <h3>Tips for Success</h3>
         <div className='secondImagebox'>
     <div className='seconImagebox-image'>
@@ -65,7 +67,7 @@ function MQ_Blue() {
           </div>
           
     </div>
-
+    </div>
        
         <div className='conclusion-image'>
          <img src="/images/Multicultural-ALL-IN-ONE.png" alt="" />
@@ -74,7 +76,9 @@ function MQ_Blue() {
         <p className="highlight-text">
           Building a Multicultural Mindset is a journey, not a destination. Every interaction is an opportunity to learn and grow, regardless of your current MQ level.
         </p>
+          
       </section>
+    </div>
     </div>
     </>
   )

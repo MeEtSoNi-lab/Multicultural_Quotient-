@@ -1,4 +1,7 @@
 /* General Styling */
+.MQ-MAIN{
+  padding: 20px;
+}
 .heading {
   color: #F3785A;
   text-align: center;
@@ -88,10 +91,8 @@ p {
 /* Common Container */
 .common-container {
   width: 100%;
-  max-width: 1200px;
-  margin: auto;
   margin-top: -50px;
-  padding: 25px;
+
   font-family: 'Arial', sans-serif;
   color: #aaa;
   background-color: #242A31;
@@ -113,8 +114,11 @@ p {
   color: #d9534f;
 }
 
+
+
 .section {
   margin-bottom: 50px;
+  
 }
 
 .section-title {
@@ -152,6 +156,8 @@ p {
 .highlight-text {
   background-color: #37474F;
   padding: 15px;
+  width: 90%;
+  margin: auto;
   margin-bottom: 20px;
   color: #FFFFFF;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -175,14 +181,15 @@ p {
 .secondImagebox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
+
 }
 
 .seconImagebox-image-content {
   width: 100%;
   max-width: 30%;
-  text-align: center;
+  text-align: start;
+  margin: auto;
 }
 
 .seconImagebox-image-content ul {
@@ -191,13 +198,15 @@ p {
 }
 
 .seconImagebox-image {
-  text-align: center;
+  text-align: start;
   width: 100%;
-  max-width: 60%;
+  max-width: 50%;
+ 
 }
 
 .seconImagebox-image img {
   max-width: 100%;
+ 
 }
 
 .conclusion-image img {
@@ -223,6 +232,10 @@ p {
   .section-title {
     font-size: 1.7rem;
   }
+
+  .seconImagebox-image{
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -246,6 +259,10 @@ p {
 
   .section-title {
     font-size: 1.6rem;
+  }
+
+  .seconImagebox-image{
+    width: 100%;
   }
 }
 
