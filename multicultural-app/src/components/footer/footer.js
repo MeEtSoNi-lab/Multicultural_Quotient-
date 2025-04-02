@@ -7,8 +7,8 @@ function footer() {
         <div class="triangle"></div>
         <p>COPYRIGHT © 2025 ALL RIGHTS RESERVED.</p>
         <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#">Multicultural Quotient</a>
+            <a href="https://multiculturalmindset.co/">Home</a>
+            <a href="https://multicultural-quotient.vercel.app/">Multicultural Quotient</a>
         </div>
     </div>
     </>
