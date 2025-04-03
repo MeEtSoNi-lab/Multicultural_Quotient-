@@ -5,12 +5,12 @@ function MQ_Yellow() {
     <>
     <div className='MQ-MAIN'>
     <div className='heading'>
-   <h1 id='title'>MQ Yellow: Building Cultural Bridges</h1>
+   
    </div>
    <div className="MQ-Main-container">
       
       <div className="MQ-content-container">
-        <h3>You're Making Great Progress!</h3>
+        <h1>You're Making Great Progress!</h1>
         <p>
         Think of MQ Yellow as being like an adventurous traveler – you've got your bearings, you're comfortable exploring, and you're ready to dive deeper. You're like someone who's learned enough cooking basics to start experimenting with fusion recipes!
         </p>

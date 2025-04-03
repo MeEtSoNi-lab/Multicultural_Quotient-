@@ -5,12 +5,12 @@ function MQ_Blue() {
     <>
     <div className='MQ-MAIN'>
     <div className='heading'>
-   <h1 id='title'>MQ Blue: Cultural Navigation Master</h1>
+  
    </div>
     <div className="MQ-Main-container">
       
       <div className="MQ-content-container">
-        <h3>Congratulations on Reaching This Level!</h3>
+        <h1>Congratulations on Reaching This Level!</h1>
         <p>
         Think of MQ Blue as being like a skilled cultural diplomat. You're like a master chef who can create beautiful fusion cuisines while respecting traditional recipes. You not only navigate different cultures with ease but help others do the same.        </p>
         <h3>What Being at Blue Means:</h3>

@@ -4,13 +4,15 @@ import './MQ.css';
 function MQ_Red() {
   return (
    <>
-   <div className='heading'>
-   <h1 id='title'>MQ Red: Beginning Your Cultural Journey</h1>
+  <div className='MQ-MAIN'>
+
+  <div className='heading'>
+ 
    </div>
      <div className="MQ-Main-container">
       
       <div className="MQ-content-container">
-        <h3>Welcome to Your Cultural Adventure!</h3>
+        <h1>Welcome to Your Cultural Adventure!</h1>
         <p>
           Think of MQ Red as the starting line of an exciting journey. You're like someone who's just discovered a passion
           for cooking – you're learning the basics, getting familiar with the ingredients, and building your confidence.
@@ -89,6 +91,7 @@ function MQ_Red() {
     </p>
   </section>
     </div>
+  </div>
 
    </>
   );

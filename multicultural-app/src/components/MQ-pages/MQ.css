@@ -65,11 +65,18 @@ p {
   flex: 1;
   max-width: 50%;
   padding: 1.5rem;
+  row-gap: 30px;
+}
+
+.MQ-content-container h1{
+  font-size: 4rem;
+  color: #FFFFFF;
+
 }
 
 .MQ-content-container h3 {
   font-size: 2rem;
-  margin-top: 1.5rem;
+  margin-top: 5rem;
   margin-bottom: 0.75rem;
 }
 

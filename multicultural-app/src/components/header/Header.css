@@ -27,7 +27,7 @@
   width: 50%;
   padding: 20px;
   display: flex;
-  align-items: center;
+  align-items: end;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #ffffff;
 }
@@ -36,11 +36,12 @@
 .home-yellow-content-info,
 .home-blue-content-info,
 .home-main-content-info {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+ 
 }
 
 .home-red-content h1,
@@ -48,17 +49,24 @@
 .home-blue-content h1
  {
   font-size: 80px;
+  text-align: start;
+
+ 
 }
 
 .home-main-content h1{
-  font-size: 60px;
+  font-size: 80px;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  text-align: center;
+  
 }
 
 .home-red-content h4,
 .home-yellow-content h4,
 .home-blue-content h4 {
   font-size: 20px;
+  text-align: start;
+
 }
 
 .home-red-content p,
@@ -67,6 +75,8 @@
   font-size: 18px;
   font-weight: 200;
   color: #ffffff;
+  text-align: start;
+
 }
 
 /* Image Styles */
@@ -75,14 +85,14 @@
 .home-blue-image,
 .home-main-image {
   width: 50%;
-  text-align: center;
+  text-align: start;
 }
 
 .home-red-image img,
 .home-yellow-image img,
 .home-blue-image img {
   width: 80%;
-  max-width: 350px;
+  max-width: 480px;
   height: auto;
 }
 
