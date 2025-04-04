@@ -181,7 +181,8 @@ p {
   width: 90%;
   background-color: #373C42;
   border-radius: 30px;
-  padding: 50px 20px;
+  /* padding: 50px 20px; */
+  padding-top:60px;
   color: #ffffff;
   text-align: center;
 }
