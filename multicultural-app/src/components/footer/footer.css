@@ -31,7 +31,14 @@ body {
     border: 3px solid #babec20f ;
 } */
 .footer p {
-    color: #FFFFFF;
+    color: #ffffff;            /* white text */
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 0;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .footer-links {
     margin-top: 15px;
