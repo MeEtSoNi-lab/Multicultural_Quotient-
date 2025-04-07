@@ -235,7 +235,7 @@ p {
 
   .MQ-Image-container, .MQ-content-container {
     max-width: 100%;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .common-container {
@@ -254,7 +254,7 @@ p {
 @media (max-width: 768px) {
   .MQ-Main-container {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
 
   .MQ-Image-container, .MQ-content-container {
@@ -305,8 +305,12 @@ p {
     padding: 1rem;
   }
 
+  .MQ-content-container h1{
+    font-size: 3rem;
+  }
+
   .tip-success-box {
-    padding: 20px;
+    padding-right: 30px;
   }
 
   .secondImagebox {
@@ -316,6 +320,6 @@ p {
   .seconImagebox-image-content, .seconImagebox-image {
     width: 100%;
     max-width: 100%;
-    text-align: center;
+   
   }
 }
