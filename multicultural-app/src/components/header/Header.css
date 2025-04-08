@@ -52,7 +52,8 @@
 }
 
 .home-main-content h1 {
-  text-align: center;
+  text-align: start;
+  margin-top: 135px;
 }
 
 .home-red-content h4,
@@ -82,11 +83,17 @@
 
 .home-red-image img,
 .home-yellow-image img,
-.home-blue-image img,
+.home-blue-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
 .home-main-image img {
   width: 100%;
   max-width: 400px;
   height: auto;
+  margin-top: 135px;
 }
 
 /* Responsive Styles */
@@ -162,9 +169,14 @@
 
   .home-red-content h1,
   .home-yellow-content h1,
-  .home-blue-content h1,
-  .home-main-content h1 {
+  .home-blue-content h1 {
     font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .home-main-content h1{
+    text-align: center;
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    margin-top: 135px;
   }
 
   .home-red-content h4,
@@ -183,6 +195,6 @@
   .home-yellow-image img,
   .home-blue-image img,
   .home-main-image img {
-    max-width: 200px;
+    max-width: 500px;
   }
 }
