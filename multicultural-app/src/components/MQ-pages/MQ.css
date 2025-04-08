@@ -226,30 +226,55 @@ p {
   width: 100%;
 }
 
-.buy-now-button-container {
+
+.buy-now-section {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;
- padding-bottom: 50px;
+  justify-content: flex-end;
+  background-image: url('../assets/images/Books.png');
+  background-size: 700px auto; /* Increase width, auto height to keep aspect ratio */
+  background-repeat: no-repeat;
+  background-position: 30px -150px; /* X: 30px from left, Y: 20px from top */
+  background-color: #2f3a48; /* Fallback color */
+  padding: 40px;
+  border-radius: 12px;
+  margin: 40px auto;
+  width: 88%;
+  color: white;
+  height: 300px; /* Set a height to make the background visible */
+}
+.buy-now-image{
+  width: 50%;
+}
+.buy-now-content {
+  flex: 1;
+  text-align: start;
+  padding-left: 40px;
+  width: 50%;
 }
 
-.buy-now-button-container .button {
+.buy-now-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.button {
   background-color: #e74c3c;
   color: white;
-  font-weight: bold;
-  padding: 12px 24px;
   border: none;
-  border-radius: 999px;
-  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 28px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  text-transform: uppercase;
   transition: background-color 0.3s ease;
 }
 
-.buy-now-button-container .button:hover {
+.button:hover {
   background-color: #c0392b;
 }
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -273,6 +298,17 @@ p {
 
   .seconImagebox-image{
     width: 100%;
+  }
+
+  .buy-now-section {
+    background-size: 500px auto;
+    background-position: 20px -100px;
+    height: auto;
+    padding: 30px;
+  }
+
+  .buy-now-content h2 {
+    font-size: 2rem;
   }
 }
 
@@ -301,6 +337,24 @@ p {
 
   .seconImagebox-image{
     width: 100%;
+  }
+
+  .buy-now-section {
+    flex-direction: column;
+    align-items: flex-start;
+    background-position: center top;
+    background-size: 400px auto;
+    padding: 25px;
+    height: auto;
+  }
+
+  .buy-now-content {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .buy-now-content h2 {
+    font-size: 1.8rem;
   }
 }
 
@@ -347,4 +401,33 @@ p {
     max-width: 100%;
    
   }
+
+  .buy-now-section {
+    background-size: 200px auto;
+    background-position: -60px -20px;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .buy-now-content h2 {
+    font-size: 1rem;
+    margin-left: 55px;
+  }
+
+  .buy-now-content {
+    flex: 1;
+    text-align: start;
+    padding-left: 40px;
+    width: 100%;
+  }
+
+  .button {
+    width: 50%;
+    text-align: center;
+    padding: 12px;
+    margin-left: 55px;
+
+  }
+
+ 
 }

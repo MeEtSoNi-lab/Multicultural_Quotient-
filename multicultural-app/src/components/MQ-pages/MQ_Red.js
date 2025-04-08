@@ -1,6 +1,7 @@
 import React from 'react';
 import './MQ.css';
 import { useNavigate } from 'react-router-dom';
+import bookBackground from '../assets/images/Books.png';
 function MQ_Red() {
   const navigate=useNavigate();
   const buyNow = () => {
@@ -94,9 +95,18 @@ function MQ_Red() {
       Building a Multicultural Mindset is a journey, not a destination. Every interaction is an opportunity to learn and grow, regardless of your current MQ level.
     </p>
   </section>
-  <div class="buy-now-button-container">
-          <button class="button" onClick={buyNow}>Buy Now</button>
-        </div>
+  
+
+  <div className="buy-now-section" style={{ backgroundImage: `url(${bookBackground})` }}>
+    <div className='buy-now-image'>
+
+    </div>
+  <div className="buy-now-content">
+    <h2>GET YOUR COPY NOW</h2>
+    <button className="button" onClick={buyNow}>BUY NOW</button>
+  </div>
+</div>
+
     </div>
   </div>
 

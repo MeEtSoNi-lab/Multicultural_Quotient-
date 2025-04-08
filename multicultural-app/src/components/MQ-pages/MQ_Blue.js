@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import bookBackground from '../assets/images/Books.png';
 
 function MQ_Blue() {
   const navigate=useNavigate();
@@ -83,9 +84,15 @@ function MQ_Blue() {
         </p>
           
       </section>
-      <div class="buy-now-button-container">
-          <button class="button" onClick={buyNow}>Buy Now</button>
-        </div>
+      <div className="buy-now-section" style={{ backgroundImage: `url(${bookBackground})` }}>
+    <div className='buy-now-image'>
+
+    </div>
+  <div className="buy-now-content">
+    <h2>GET YOUR COPY NOW</h2>
+    <button className="button" onClick={buyNow}>BUY NOW</button>
+  </div>
+  </div>
     </div>
     </div>
     </>
