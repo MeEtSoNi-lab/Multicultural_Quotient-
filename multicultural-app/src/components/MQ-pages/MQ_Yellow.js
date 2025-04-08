@@ -1,6 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './MQ.css'
 function MQ_Yellow() {
+  const navigate=useNavigate();
+  const buyNow = () => {
+    window.location.href = 'https://www.amazon.com/Multicultural-Mindset-Driving-Business-Borderless/dp/B0F2DR5B8D';
+  };
+
   return (
     <>
     <div className='MQ-MAIN'>
@@ -83,6 +89,10 @@ function MQ_Yellow() {
           </p>
          
         </section>
+        <div class="buy-now-button-container">
+          <button class="button" onClick={buyNow}>Buy Now</button>
+        </div>
+
     </div>
     </div>
    

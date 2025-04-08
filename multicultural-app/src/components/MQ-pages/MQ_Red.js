@@ -1,7 +1,11 @@
 import React from 'react';
 import './MQ.css';
-
+import { useNavigate } from 'react-router-dom';
 function MQ_Red() {
+  const navigate=useNavigate();
+  const buyNow = () => {
+    window.location.href = 'https://www.amazon.com/Multicultural-Mindset-Driving-Business-Borderless/dp/B0F2DR5B8D';
+  };
   return (
    <>
   <div className='MQ-MAIN'>
@@ -90,6 +94,9 @@ function MQ_Red() {
       Building a Multicultural Mindset is a journey, not a destination. Every interaction is an opportunity to learn and grow, regardless of your current MQ level.
     </p>
   </section>
+  <div class="buy-now-button-container">
+          <button class="button" onClick={buyNow}>Buy Now</button>
+        </div>
     </div>
   </div>
 
